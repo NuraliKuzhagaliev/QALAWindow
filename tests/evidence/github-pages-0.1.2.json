@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-22T15:47:44.592Z",
+  "repository": "https://github.com/NuraliKuzhagaliev/QALAWindow",
+  "visibility": "public",
+  "site": "https://nuralikuzhagaliev.github.io/QALAWindow/",
+  "anonymous": true,
+  "http": 200,
+  "pagesStatus": null,
+  "source": {
+    "branch": "gh-pages",
+    "path": "/"
+  },
+  "pagesCommit": "8a36464c323cab65a183906f87ba53d461310588",
+  "auditedBlobs": 184,
+  "releaseAssets": 5
+}

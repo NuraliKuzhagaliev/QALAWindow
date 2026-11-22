@@ -2,6 +2,8 @@
 
 Astana, within the time you have. A shared TypeScript product for a responsive public web app and a genuine Windows application. Built for the Smart City track. No account required.
 
+[Open QALA Window](https://nuralikuzhagaliev.github.io/QALAWindow/) · [Windows portable and SHA256](https://github.com/NuraliKuzhagaliev/QALAWindow/releases/tag/v0.1.2)
+
 ## Run on Windows, with all writes on D:
 
 ```powershell
