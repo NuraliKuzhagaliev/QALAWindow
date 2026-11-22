@@ -8,11 +8,11 @@ Selected case: НИЦ Smart City, AI walking assistant for Astana. Official brie
 - [x] 48 development and 24 holdout behavior cases, raw denominators
 - [x] Privacy, ethics and uncertainty notes
 - [x] [Public site](https://nuralikuzhagaliev.github.io/QALAWindow/) verified without an account
-- [x] [Windows 0.1.3 verification](../docs/RELEASE_0.1.3.md) covers portable launch, real Windows location, offline planning, file operations and restart
+- [x] [Windows 0.1.4 verification](../docs/RELEASE_0.1.4.md) covers portable launch, real Save and Open dialogs, cancellation and offline file reopening
 - [x] [Presentation PDF](presentation.pdf), [editable PowerPoint](presentation.pptx) and [speaker notes](SPEAKER_NOTES.md)
 - [x] [Demonstration and captions in the 0.1.2 release](https://github.com/NuraliKuzhagaliev/QALAWindow/releases/tag/v0.1.2) with [YouTube metadata](YOUTUBE_METADATA.md)
 - [ ] Accessible uploaded YouTube link: requires explicit upload/publication authorization and account access
-- [x] [Public source repository](https://github.com/NuraliKuzhagaliev/QALAWindow) and [0.1.3 release assets and SHA256](https://github.com/NuraliKuzhagaliev/QALAWindow/releases/tag/v0.1.3)
+- [x] [Public source repository](https://github.com/NuraliKuzhagaliev/QALAWindow) and [0.1.4 release assets and SHA256](https://github.com/NuraliKuzhagaliev/QALAWindow/releases/tag/v0.1.4)
 - [ ] Confirm exact submission cutoff/timezone, permitted pre-event coding, AI/reuse disclosure, eligibility, final fields and current rule addenda before irreversible submission
 
 No form has been submitted, no organizer contacted, no video published and no partnerships or jury scores claimed.

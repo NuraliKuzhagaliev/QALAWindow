@@ -6,8 +6,10 @@
 
 На версии 0.1.3 повторный экспорт через Windows добавлял вторую запись. На точном EXE 0.1.4 отмена сохранения оставила одну локальную копию без файла. Вторая попытка создала `Walk.qala.json`, и в списке осталась одна запись. Отмена открытия вернула управление в приложение. Выбор файла через настоящее окно Windows восстановил три остановки и четыре плеча маршрута офлайн. [Протокол системных диалогов](../tests/evidence/native-dialog-0.1.4.json)
 
-Прошли [83 детерминированных теста](../tests/evidence/deterministic-0.1.4.tap), [регрессия Windows с подставными результатами диалога](../tests/evidence/native-clear-0.1.4.json), [браузерная регрессия](../tests/evidence/static-web-0.1.4-local.json), [проверка прогноза и его резервных сценариев](../tests/evidence/release-web-0.1.4-local.json) и [GitHub CI](https://github.com/NuraliKuzhagaliev/QALAWindow/actions/runs/45045203534). Проверка рабочих npm-зависимостей не обнаружила замечаний.
+Прошли [83 детерминированных теста](../tests/evidence/deterministic-0.1.4.tap), [регрессия Windows с подставными результатами диалога](../tests/evidence/native-clear-0.1.4.json), [браузерная регрессия](../tests/evidence/static-web-0.1.4-local.json), [проверка прогноза и его резервных сценариев](../tests/evidence/release-web-0.1.4-local.json) и [GitHub CI на коммите релиза](https://github.com/NuraliKuzhagaliev/QALAWindow/actions/runs/45045575627). Рабочие npm-зависимости прошли аудит без замечаний. Полный аудит сообщил о шести умеренных замечаниях в зависимостях упаковщика.
 
 На местности ещё требуется проверить доступность маршрутов и входов. Казахский текст ожидает вычитки носителем. Живые Gemini и HeiGIT не вызывались, а опубликованное демонстрационное видео осталось в предыдущем релизе. Windows EXE без цифровой подписи.
+
+GitHub Pages проверен без входа. Браузер построил маршрут, получил прогноз Open-Meteo и подтвердил исправление повторного экспорта и обработки повреждённого файла. Все 122 504 826 байт EXE скачаны со ссылки сайта. SHA256 совпал с локальным файлом и контрольной суммой релиза. [Проверка сайта](../tests/evidence/static-web-0.1.4-public.json) · [Сверка скачанного EXE](../tests/evidence/download-0.1.4-public.json)
 
 [Публичный сайт](https://nuralikuzhagaliev.github.io/QALAWindow/) · [Релиз и SHA256](https://github.com/NuraliKuzhagaliev/QALAWindow/releases/tag/v0.1.4)

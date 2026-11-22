@@ -1,0 +1,21 @@
+{
+  "revision": "e84d706256a807b3a4a5454bef440cd389375e22",
+  "url": "https://github.com/NuraliKuzhagaliev/QALAWindow/releases/tag/v0.1.4",
+  "assets": [
+    {
+      "name": "QALAWindow-0.1.4-Windows-x64.exe",
+      "bytes": 122504826,
+      "sha256": "1e2ad5dd4ab2587cd12a243c4b9275bab672812a3fc3f7ab5ebdc861037085e2"
+    },
+    {
+      "name": "QALAWindow-0.1.4-Windows-x64.exe.sha256",
+      "bytes": 100,
+      "sha256": "8b7fe615fcbc6bb93f505e6e1bddd26a5e4f731c38ff89478e03ea12386418f7"
+    },
+    {
+      "name": "qala-web-0.1.4.tar.gz",
+      "bytes": 1333557,
+      "sha256": "454448bb150b346ea6e6fe950e937caaef1a979fd522b55ca4090adc77d59e00"
+    }
+  ]
+}
