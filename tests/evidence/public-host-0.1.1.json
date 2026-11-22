@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-22T15:19:33.876Z",
+  "base": "https://qala-window-astana-2026.nurali6002217.chatgpt.site",
+  "sitesLookup": "NOT_FOUND",
+  "sourcePush": "HTTP 403 on expiring credential, renewal is blocked by Sites NOT_FOUND",
+  "rows": [
+    {
+      "path": "/",
+      "status": 404,
+      "applicationAsset": false,
+      "json": false
+    },
+    {
+      "path": "/api/health",
+      "status": 404,
+      "applicationAsset": false,
+      "json": false
+    },
+    {
+      "path": "/api/weather",
+      "status": 404,
+      "applicationAsset": false,
+      "json": false
+    }
+  ]
+}

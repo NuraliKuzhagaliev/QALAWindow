@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-18T18:45:24.048Z",
+  "executable": "D:/projects/QALAWindow/release/windows/win-unpacked/QALA Window.exe",
+  "realNativeSave": true,
+  "realNativeOpen": true,
+  "restart": true,
+  "afterRestart": 1,
+  "bridge": {
+    "native": true,
+    "nodeIntegration": false,
+    "apiBase": "https://qala-window-astana-2026.nurali6002217.chatgpt.site",
+    "offline": true
+  },
+  "paths": {
+    "packaged": true,
+    "version": "0.1.0",
+    "userData": "D:/projects/QALAWindow/.tmp/native-qa-full",
+    "temp": "D:\\projects\\QALAWindow\\.tmp\\native-qa-full\\tmp"
+  },
+  "packFormat": "qala-route-pack",
+  "geometryPreserved": true,
+  "sourceReceipts": true,
+  "pageErrors": []
+}

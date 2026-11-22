@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-18T19:09:07.382Z",
+  "checks": [
+    {
+      "name": "GPS denial keeps manual planning usable",
+      "pass": true
+    },
+    {
+      "name": "Cyrillic area alias resolves to Keruen source anchor",
+      "pass": true
+    },
+    {
+      "name": "Injected model outage retains validated places, no live AI claim",
+      "pass": true,
+      "kind": "injected failure"
+    },
+    {
+      "name": "390px mobile sheet collapses and expands",
+      "pass": true
+    },
+    {
+      "name": "Judge import rejects bad bounds and uses isolated marked test record",
+      "pass": true,
+      "kind": "synthetic import"
+    },
+    {
+      "name": "Judge reset restores source dataset",
+      "pass": true
+    },
+    {
+      "name": "Closed browser, reopened same profile fully offline: shell, IndexedDB pack and geometry available",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

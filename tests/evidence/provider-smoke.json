@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-18T17:43:08.472Z",
+  "gemini": {
+    "success": true,
+    "model": "gemini-3.5-flash-lite",
+    "usage": {
+      "promptTokenCount": 14,
+      "candidatesTokenCount": 9,
+      "totalTokenCount": 23,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 14
+        }
+      ],
+      "serviceTier": "standard"
+    },
+    "calls": 1
+  },
+  "heigit": {
+    "success": false,
+    "error": "The operation was aborted due to timeout",
+    "calls": 1
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "at": "2026-10-18T18:00:57.870Z",
+  "model": "gemini-3.5-flash-lite",
+  "dataset": "osm-2026-10-18-a3fc82c5",
+  "results": [
+    {
+      "language": "en",
+      "query": "A short discovery and coffee",
+      "success": true,
+      "latencyMs": 1177.2826999999997,
+      "mode": "live_ai",
+      "items": [
+        {
+          "id": "way/499328514",
+          "name": "Mega Silk Way",
+          "reason": "A nearby option from the collected dataset.",
+          "activity": "Pause and notice one detail you would usually walk past.",
+          "hours": "scheduled"
+        },
+        {
+          "id": "node/14275682079",
+          "name": "Drinkit",
+          "reason": "This place is near the selected starting point.",
+          "activity": "Take a short, unhurried break if entry is available.",
+          "hours": "scheduled"
+        }
+      ],
+      "trace": {
+        "stage": "generate",
+        "summary": "Real gemini/gemini-3.5-flash-lite structured generation. IDs, indices and approved claims validated. Usage: {\"promptTokenCount\":239,\"candidatesTokenCount\":97,\"totalTokenCount\":336,\"promptTokensDetails\":[{\"modality\":\"TEXT\",\"tokenCount\":239}],\"serviceTier\":\"standard\"}. No coordinates supplied."
+      }
+    },
+    {
+      "language": "ru",
+      "query": "Хочу кофе и небольшую прогулку",
+      "success": true,
+      "latencyMs": 833.7739999999999,
+      "mode": "live_ai",
+      "items": [
+        {
+          "id": "way/499328514",
+          "name": "Mega Silk Way",
+          "reason": "Место поблизости из собранного набора данных.",
+          "activity": "Остановитесь и найдите деталь, которую обычно не замечаете.",
+          "hours": "scheduled"
+        },
+        {
+          "id": "node/12293708057",
+          "name": "Paul",
+          "reason": "Это место рядом с выбранной точкой старта.",
+          "activity": "Сделайте короткий спокойный перерыв, если вход доступен.",
+          "hours": "scheduled"
+        }
+      ],
+      "trace": {
+        "stage": "generate",
+        "summary": "Real gemini/gemini-3.5-flash-lite structured generation. IDs, indices and approved claims validated. Usage: {\"promptTokenCount\":260,\"candidatesTokenCount\":53,\"totalTokenCount\":313,\"promptTokensDetails\":[{\"modality\":\"TEXT\",\"tokenCount\":260}],\"serviceTier\":\"standard\"}. No coordinates supplied."
+      }
+    },
+    {
+      "language": "kk",
+      "query": "Кофе ішіп, аздап серуендегім келеді",
+      "success": true,
+      "latencyMs": 1305.4345999999996,
+      "mode": "live_ai",
+      "items": [
+        {
+          "id": "way/499328514",
+          "name": "Mega Silk Way",
+          "reason": "Жиналған деректердегі жақын орын.",
+          "activity": "Тоқтап, әдетте байқамайтын бір бөлшекті табыңыз.",
+          "hours": "scheduled"
+        },
+        {
+          "id": "node/12293708057",
+          "name": "Paul",
+          "reason": "Бұл орын таңдалған бастапқы нүктеге жақын.",
+          "activity": "Кіруге мүмкіндік болса, қысқа үзіліс жасаңыз.",
+          "hours": "scheduled"
+        }
+      ],
+      "trace": {
+        "stage": "generate",
+        "summary": "Real gemini/gemini-3.5-flash-lite structured generation. IDs, indices and approved claims validated. Usage: {\"promptTokenCount\":328,\"candidatesTokenCount\":97,\"totalTokenCount\":425,\"promptTokensDetails\":[{\"modality\":\"TEXT\",\"tokenCount\":328}],\"serviceTier\":\"standard\"}. No coordinates supplied."
+      }
+    },
+    {
+      "language": "en",
+      "query": "Architecture and a relaxed break",
+      "success": true,
+      "latencyMs": 1172.1453000000001,
+      "mode": "live_ai",
+      "items": [
+        {
+          "id": "way/108096984",
+          "name": "Керуен",
+          "reason": "Matches your interests within the retrieved nearby places.",
+          "activity": "Pause and notice one detail you would usually walk past.",
+          "hours": "unknown"
+        },
+        {
+          "id": "node/13313122337",
+          "name": "Gasteria",
+          "reason": "This place is near the selected starting point.",
+          "activity": "Take a short, unhurried break if entry is available.",
+          "hours": "unknown"
+        }
+      ],
+      "trace": {
+        "stage": "generate",
+        "summary": "Real gemini/gemini-3.5-flash-lite structured generation. IDs, indices and approved claims validated. Usage: {\"promptTokenCount\":241,\"candidatesTokenCount\":97,\"totalTokenCount\":338,\"promptTokensDetails\":[{\"modality\":\"TEXT\",\"tokenCount\":241}],\"serviceTier\":\"standard\"}. No coordinates supplied."
+      }
+    },
+    {
+      "language": "ru",
+      "query": "Прогулка и что-то интересное рядом",
+      "success": true,
+      "latencyMs": 953.0419000000002,
+      "mode": "live_ai",
+      "items": [
+        {
+          "id": "node/4853972122",
+          "name": "Фаттуш",
+          "reason": "Соответствует интересам среди найденных мест рядом.",
+          "activity": "Остановитесь и найдите деталь, которую обычно не замечаете.",
+          "hours": "scheduled"
+        },
+        {
+          "id": "node/12520559589",
+          "name": "Лепим и варим",
+          "reason": "Это место рядом с выбранной точкой старта.",
+          "activity": "Сделайте короткий спокойный перерыв, если вход доступен.",
+          "hours": "scheduled"
+        }
+      ],
+      "trace": {
+        "stage": "generate",
+        "summary": "Real gemini/gemini-3.5-flash-lite structured generation. IDs, indices and approved claims validated. Usage: {\"promptTokenCount\":266,\"candidatesTokenCount\":97,\"totalTokenCount\":363,\"promptTokensDetails\":[{\"modality\":\"TEXT\",\"tokenCount\":266}],\"serviceTier\":\"standard\"}. No coordinates supplied."
+      }
+    },
+    {
+      "language": "kk",
+      "query": "Жақын жерден қызықты орын іздеймін",
+      "success": true,
+      "latencyMs": 948.351999999999,
+      "mode": "live_ai",
+      "items": [
+        {
+          "id": "node/4853972122",
+          "name": "Фаттуш",
+          "reason": "Жақын жерден табылған орындардың ішінде қызығушылығыңызға сай.",
+          "activity": "Тоқтап, әдетте байқамайтын бір бөлшекті табыңыз.",
+          "hours": "scheduled"
+        },
+        {
+          "id": "node/12520559589",
+          "name": "Лепим и варим",
+          "reason": "Бұл орын таңдалған бастапқы нүктеге жақын.",
+          "activity": "Кіруге мүмкіндік болса, қысқа үзіліс жасаңыз.",
+          "hours": "scheduled"
+        }
+      ],
+      "trace": {
+        "stage": "generate",
+        "summary": "Real gemini/gemini-3.5-flash-lite structured generation. IDs, indices and approved claims validated. Usage: {\"promptTokenCount\":346,\"candidatesTokenCount\":97,\"totalTokenCount\":443,\"promptTokensDetails\":[{\"modality\":\"TEXT\",\"tokenCount\":346}],\"serviceTier\":\"standard\"}. No coordinates supplied."
+      }
+    }
+  ],
+  "usage": {
+    "calls": 6,
+    "cacheHits": 0,
+    "failures": 0,
+    "inputTokens": 1680,
+    "outputTokens": 538
+  },
+  "cost": "Not measured from billing. No paid fallback or billing change.",
+  "review": "Automated source/ID/time invariants; semantic review required separately. Kazakh native review pending."
+}

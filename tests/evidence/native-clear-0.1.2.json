@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-22T15:35:55.729Z",
+  "packaged": true,
+  "version": "0.1.2",
+  "electron": "44.11.5",
+  "offlineStops": 2,
+  "clearedAfterRestart": true,
+  "managedPackRemoved": true,
+  "exportedPackPreserved": true,
+  "unrelatedFilePreserved": true,
+  "geolocationPermissionWithEmulatedPosition": true,
+  "platformLocation": true,
+  "picker": "test double; actual IPC and file IO",
+  "pageErrors": []
+}

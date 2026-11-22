@@ -1,0 +1,494 @@
+
+> qala-window@0.1.1 test
+> tsx --test tests/*.test.ts
+
+TAP version 13
+# Subtest: D01 one-stop plan includes outbound, dwell, return and buffer
+ok 1 - D01 one-stop plan includes outbound, dwell, return and buffer
+  ---
+  duration_ms: 83.7622
+  type: 'test'
+  ...
+# Subtest: D02 two individually feasible stops fail together
+ok 2 - D02 two individually feasible stops fail together
+  ---
+  duration_ms: 31.2416
+  type: 'test'
+  ...
+# Subtest: D03 impossible 5 minute budget returns zero
+ok 3 - D03 impossible 5 minute budget returns zero
+  ---
+  duration_ms: 5.0918
+  type: 'test'
+  ...
+# Subtest: D04 buffer is counted once
+ok 4 - D04 buffer is counted once
+  ---
+  duration_ms: 5.146
+  type: 'test'
+  ...
+# Subtest: D05 required distinct endpoint uses the final route
+ok 5 - D05 required distinct endpoint uses the final route
+  ---
+  duration_ms: 4.2264
+  type: 'test'
+  ...
+# Subtest: D06 missing return route blocks plan
+ok 6 - D06 missing return route blocks plan
+  ---
+  duration_ms: 3.6843
+  type: 'test'
+  ...
+# Subtest: D07 missing outward route blocks plan
+ok 7 - D07 missing outward route blocks plan
+  ---
+  duration_ms: 1.1197
+  type: 'test'
+  ...
+# Subtest: D08 minutes converted to seconds in walk cap
+ok 8 - D08 minutes converted to seconds in walk cap
+  ---
+  duration_ms: 1.9727
+  type: 'test'
+  ...
+# Subtest: D09 outdoor dwell included for unknown indoor status
+ok 9 - D09 outdoor dwell included for unknown indoor status
+  ---
+  duration_ms: 3.4638
+  type: 'test'
+  ...
+# Subtest: D10 indoor status does not remove outdoor travel
+ok 10 - D10 indoor status does not remove outdoor travel
+  ---
+  duration_ms: 4.4757
+  type: 'test'
+  ...
+# Subtest: D11 entry unknown never becomes open
+ok 11 - D11 entry unknown never becomes open
+  ---
+  duration_ms: 0.8338
+  type: 'test'
+  ...
+# Subtest: D12 known-hours requirement excludes unknown
+ok 12 - D12 known-hours requirement excludes unknown
+  ---
+  duration_ms: 0.6999
+  type: 'test'
+  ...
+# Subtest: D13 close before arrival is excluded
+ok 13 - D13 close before arrival is excluded
+  ---
+  duration_ms: 11.5694
+  type: 'test'
+  ...
+# Subtest: D14 close during visit is excluded
+ok 14 - D14 close during visit is excluded
+  ---
+  duration_ms: 2.2836
+  type: 'test'
+  ...
+# Subtest: D15 overnight schedule works across midnight
+ok 15 - D15 overnight schedule works across midnight
+  ---
+  duration_ms: 6.7211
+  type: 'test'
+  ...
+# Subtest: D16 unresolved holiday calendar remains unknown
+ok 16 - D16 unresolved holiday calendar remains unknown
+  ---
+  duration_ms: 0.2402
+  type: 'test'
+  ...
+# Subtest: D17 malformed schedule remains unknown
+ok 17 - D17 malformed schedule remains unknown
+  ---
+  duration_ms: 13.1291
+  type: 'test'
+  ...
+# Subtest: D18 contradictory source schedules remain conflict
+ok 18 - D18 contradictory source schedules remain conflict
+  ---
+  duration_ms: 0.556
+  type: 'test'
+  ...
+# Subtest: D19 socket strict unknown cannot qualify
+ok 19 - D19 socket strict unknown cannot qualify
+  ---
+  duration_ms: 0.3866
+  type: 'test'
+  ...
+# Subtest: D20 quiet strict unknown cannot qualify
+ok 20 - D20 quiet strict unknown cannot qualify
+  ---
+  duration_ms: 0.3128
+  type: 'test'
+  ...
+# Subtest: D21 child strict unknown cannot qualify
+ok 21 - D21 child strict unknown cannot qualify
+  ---
+  duration_ms: 0.2414
+  type: 'test'
+  ...
+# Subtest: D22 missing price never means free
+ok 22 - D22 missing price never means free
+  ---
+  duration_ms: 0.2215
+  type: 'test'
+  ...
+# Subtest: D23 strict step-free excludes unverified route even tagged entrance
+ok 23 - D23 strict step-free excludes unverified route even tagged entrance
+  ---
+  duration_ms: 0.2842
+  type: 'test'
+  ...
+# Subtest: D24 preferred access ranks tagged entrances but does not create route evidence
+ok 24 - D24 preferred access ranks tagged entrances but does not create route evidence
+  ---
+  duration_ms: 9.4061
+  type: 'test'
+  ...
+# Subtest: D25 any group member hard constraint survives
+ok 25 - D25 any group member hard constraint survives
+  ---
+  duration_ms: 1.8677
+  type: 'test'
+  ...
+# Subtest: D26 minimum group walk cap applies to all legs
+ok 26 - D26 minimum group walk cap applies to all legs
+  ---
+  duration_ms: 0.4127
+  type: 'test'
+  ...
+# Subtest: D27 group fairness records the least matched member
+ok 27 - D27 group fairness records the least matched member
+  ---
+  duration_ms: 2.1764
+  type: 'test'
+  ...
+# Subtest: D28 simulated closure excludes the selected stop without mutation
+ok 28 - D28 simulated closure excludes the selected stop without mutation
+  ---
+  duration_ms: 0.7126
+  type: 'test'
+  ...
+# Subtest: D29 weather limit recomputes rather than editing old arithmetic
+ok 29 - D29 weather limit recomputes rather than editing old arithmetic
+  ---
+  duration_ms: 4.3314
+  type: 'test'
+  ...
+# Subtest: D30 Cyrillic alias retrieval
+ok 30 - D30 Cyrillic alias retrieval
+  ---
+  duration_ms: 0.5914
+  type: 'test'
+  ...
+# Subtest: D31 Kazakh glyphs survive normalization
+ok 31 - D31 Kazakh glyphs survive normalization
+  ---
+  duration_ms: 0.1061
+  type: 'test'
+  ...
+# Subtest: D32 all languages preserve stop IDs and timing
+ok 32 - D32 all languages preserve stop IDs and timing
+  ---
+  duration_ms: 7.5653
+  type: 'test'
+  ...
+# Subtest: D33 Astana clock independent of host timezone
+ok 33 - D33 Astana clock independent of host timezone
+  ---
+  duration_ms: 0.4794
+  type: 'test'
+  ...
+# Subtest: D34 finite coordinate schema rejects NaN and Infinity
+ok 34 - D34 finite coordinate schema rejects NaN and Infinity
+  ---
+  duration_ms: 0.489
+  type: 'test'
+  ...
+# Subtest: D35 latitude and longitude bounds enforced
+ok 35 - D35 latitude and longitude bounds enforced
+  ---
+  duration_ms: 0.251
+  type: 'test'
+  ...
+# Subtest: D36 invalid deadline rejects input before planning
+ok 36 - D36 invalid deadline rejects input before planning
+  ---
+  duration_ms: 0.4996
+  type: 'test'
+  ...
+# Subtest: D37 airport query requires explicit usable landside budget
+ok 37 - D37 airport query requires explicit usable landside budget
+  ---
+  duration_ms: 0.2224
+  type: 'test'
+  ...
+# Subtest: D38 prompt-contained coordinates and email redacted
+ok 38 - D38 prompt-contained coordinates and email redacted
+  ---
+  duration_ms: 0.4781
+  type: 'test'
+  ...
+# Subtest: D39 source injection remains inert data
+ok 39 - D39 source injection remains inert data
+  ---
+  duration_ms: 0.3322
+  type: 'test'
+  ...
+# Subtest: D40 valid isolated import is unverified and has no claims promoted
+ok 40 - D40 valid isolated import is unverified and has no claims promoted
+  ---
+  duration_ms: 1.8244
+  type: 'test'
+  ...
+# Subtest: D41 import rejects missing required fields
+ok 41 - D41 import rejects missing required fields
+  ---
+  duration_ms: 1.3855
+  type: 'test'
+  ...
+# Subtest: D42 import rejects extra fields
+ok 42 - D42 import rejects extra fields
+  ---
+  duration_ms: 0.4396
+  type: 'test'
+  ...
+# Subtest: D43 import rejects out-of-city coordinates
+ok 43 - D43 import rejects out-of-city coordinates
+  ---
+  duration_ms: 0.3317
+  type: 'test'
+  ...
+# Subtest: D44 import rejects HTML executable content
+ok 44 - D44 import rejects HTML executable content
+  ---
+  duration_ms: 0.4879
+  type: 'test'
+  ...
+# Subtest: D45 import limits rows and bytes
+ok 45 - D45 import limits rows and bytes
+  ---
+  duration_ms: 0.5304
+  type: 'test'
+  ...
+# Subtest: D46 CSV formula injection rejected
+ok 46 - D46 CSV formula injection rejected
+  ---
+  duration_ms: 0.4843
+  type: 'test'
+  ...
+# Subtest: D47 corrupt and incomplete route pack rejected
+ok 47 - D47 corrupt and incomplete route pack rejected
+  ---
+  duration_ms: 6.694
+  type: 'test'
+  ...
+# Subtest: D48 haversine metres are not silently kilometres
+ok 48 - D48 haversine metres are not silently kilometres
+  ---
+  duration_ms: 0.3064
+  type: 'test'
+  ...
+# Subtest: H01 Expo 45-minute real return loop
+ok 49 - H01 Expo 45-minute real return loop
+  ---
+  duration_ms: 2264.2082
+  type: 'test'
+  ...
+# Subtest: H02 Nurzhol 90-minute real return loop
+ok 50 - H02 Nurzhol 90-minute real return loop
+  ---
+  duration_ms: 2766.5943
+  type: 'test'
+  ...
+# Subtest: H03 Short real window permits honest zero
+ok 51 - H03 Short real window permits honest zero
+  ---
+  duration_ms: 1162.5058
+  type: 'test'
+  ...
+# Subtest: H04 Nature query retains nearby source IDs
+ok 52 - H04 Nature query retains nearby source IDs
+  ---
+  duration_ms: 1607.9723
+  type: 'test'
+  ...
+# Subtest: H05 Strict socket requirement on real missing evidence
+ok 53 - H05 Strict socket requirement on real missing evidence
+  ---
+  duration_ms: 2.8275
+  type: 'test'
+  ...
+# Subtest: H06 Strict quiet requirement on real missing evidence
+ok 54 - H06 Strict quiet requirement on real missing evidence
+  ---
+  duration_ms: 1.8425
+  type: 'test'
+  ...
+# Subtest: H07 Strict route accessibility cannot pass unknown
+ok 55 - H07 Strict route accessibility cannot pass unknown
+  ---
+  duration_ms: 1.6876
+  type: 'test'
+  ...
+# Subtest: H08 Require known hours across complete visit
+ok 56 - H08 Require known hours across complete visit
+  ---
+  duration_ms: 966.2712
+  type: 'test'
+  ...
+# Subtest: H09 Zero outdoor allowance on real route
+ok 57 - H09 Zero outdoor allowance on real route
+  ---
+  duration_ms: 3491.3032
+  type: 'test'
+  ...
+# Subtest: H10 Explicit 5-person hard constraint conflict
+ok 58 - H10 Explicit 5-person hard constraint conflict
+  ---
+  duration_ms: 3.7443
+  type: 'test'
+  ...
+# Subtest: H11 Russian socket free text is a hard condition
+ok 59 - H11 Russian socket free text is a hard condition
+  ---
+  duration_ms: 1.8366
+  type: 'test'
+  ...
+# Subtest: H12 Airport flight query has no implied excursion budget
+ok 60 - H12 Airport flight query has no implied excursion budget
+  ---
+  duration_ms: 0.2958
+  type: 'test'
+  ...
+# Subtest: H13 Non-default buffer changes slack exactly
+ok 61 - H13 Non-default buffer changes slack exactly
+  ---
+  duration_ms: 3.3699
+  type: 'test'
+  ...
+# Subtest: H14 Max-min ranking beats mean-only on controlled conflict
+ok 62 - H14 Max-min ranking beats mean-only on controlled conflict
+  ---
+  duration_ms: 8.6881
+  type: 'test'
+  ...
+# Subtest: H15 Weather Plan B is real recomputation with diff
+ok 63 - H15 Weather Plan B is real recomputation with diff
+  ---
+  duration_ms: 12.7781
+  type: 'test'
+  ...
+# Subtest: H16 Valid pack roundtrip preserves geometry and receipts
+ok 64 - H16 Valid pack roundtrip preserves geometry and receipts
+  ---
+  duration_ms: 1944.6293
+  type: 'test'
+  ...
+# Subtest: H17 Pack corrupted negative timing is rejected
+ok 65 - H17 Pack corrupted negative timing is rejected
+  ---
+  duration_ms: 4.6788
+  type: 'test'
+  ...
+# Subtest: H18 Malformed JSON challenge is rejected
+ok 66 - H18 Malformed JSON challenge is rejected
+  ---
+  duration_ms: 0.4354
+  type: 'test'
+  ...
+# Subtest: H19 Excessive coordinate precision does not bypass finite validation
+ok 67 - H19 Excessive coordinate precision does not bypass finite validation
+  ---
+  duration_ms: 1.5241
+  type: 'test'
+  ...
+# Subtest: H20 Invented model POI rejected
+ok 68 - H20 Invented model POI rejected
+  ---
+  duration_ms: 2.4168
+  type: 'test'
+  ...
+# Subtest: H21 Malformed model JSON rejected
+ok 69 - H21 Malformed model JSON rejected
+  ---
+  duration_ms: 0.2943
+  type: 'test'
+  ...
+# Subtest: H22 Unsupported generated factual attributes rejected
+ok 70 - H22 Unsupported generated factual attributes rejected
+  ---
+  duration_ms: 0.4749
+  type: 'test'
+  ...
+# Subtest: H23 Outside-network real manual position returns honest zero
+ok 71 - H23 Outside-network real manual position returns honest zero
+  ---
+  duration_ms: 2.3709
+  type: 'test'
+  ...
+# Subtest: H24 Closure reset restores same source-backed outcome
+ok 72 - H24 Closure reset restores same source-backed outcome
+  ---
+  duration_ms: 5143.1842
+  type: 'test'
+  ...
+# Subtest: write holdout evidence
+ok 73 - write holdout evidence
+  ---
+  duration_ms: 56.2569
+  type: 'test'
+  ...
+# Subtest: L01 Cyrillic and Latin area aliases resolve to the same explicit source anchor
+ok 74 - L01 Cyrillic and Latin area aliases resolve to the same explicit source anchor
+  ---
+  duration_ms: 5.5424
+  type: 'test'
+  ...
+# Subtest: L02 source POI also used as an anchor does not become ambiguous
+ok 75 - L02 source POI also used as an anchor does not become ambiguous
+  ---
+  duration_ms: 1.201
+  type: 'test'
+  ...
+# Subtest: L03 repeated branch names stay ambiguous
+ok 76 - L03 repeated branch names stay ambiguous
+  ---
+  duration_ms: 0.5493
+  type: 'test'
+  ...
+# Subtest: L04 no fuzzy invented place on unknown input
+ok 77 - L04 no fuzzy invented place on unknown input
+  ---
+  duration_ms: 0.8974
+  type: 'test'
+  ...
+# Subtest: daily quota uses midnight in Pacific time including DST transitions
+ok 78 - daily quota uses midnight in Pacific time including DST transitions
+  ---
+  duration_ms: 1.8333
+  type: 'test'
+  ...
+# Subtest: weather API validates, timestamps and reuses the city snapshot
+ok 79 - weather API validates, timestamps and reuses the city snapshot
+  ---
+  duration_ms: 181.5784
+  type: 'test'
+  ...
+# Subtest: weather API rejects malformed responses and recovers after an upstream refusal
+ok 80 - weather API rejects malformed responses and recovers after an upstream refusal
+  ---
+  duration_ms: 107.2967
+  type: 'test'
+  ...
+1..80
+# tests 80
+# suites 0
+# pass 80
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 23778.7805

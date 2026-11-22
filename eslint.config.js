@@ -1,0 +1,57 @@
+import js from "@eslint/js";
+import tseslint from "typescript-eslint";
+export default tseslint.config(
+  {
+    ignores: [
+      "node_modules/**",
+      ".cache/**",
+      ".tmp/**",
+      "dist/**",
+      "release/**",
+      "public/**",
+      "deploy/**",
+      "submission/**",
+      "docs/**",
+    ],
+  },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  {
+    files: ["**/*.{ts,tsx,js,mjs,cjs}"],
+    languageOptions: {
+      globals: {
+        process: "readonly",
+        console: "readonly",
+        Buffer: "readonly",
+        window: "readonly",
+        document: "readonly",
+        navigator: "readonly",
+        fetch: "readonly",
+        URL: "readonly",
+        Response: "readonly",
+        Request: "readonly",
+        AbortSignal: "readonly",
+        performance: "readonly",
+        crypto: "readonly",
+        setTimeout: "readonly",
+        require: "readonly",
+        __dirname: "readonly",
+        File: "readonly",
+        HTMLElement: "readonly",
+        HTMLDivElement: "readonly",
+        HTMLInputElement: "readonly",
+        HTMLDialogElement: "readonly",
+        TextEncoder: "readonly",
+        Blob: "readonly",
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "no-empty": ["error", { allowEmptyCatch: true }],
+      "no-undef": "off",
+    },
+  },
+);

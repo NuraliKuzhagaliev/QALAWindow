@@ -1,0 +1,19 @@
+{
+  "version": "osm-2026-11-21-258b6326",
+  "sourceTimestamp": "2026-11-21T21:20:51Z",
+  "sourceSha256": "262edc773538a4ce594f165d15643eae35a1e3f72d20ce7c079ecb727d769803",
+  "places": 120,
+  "networkWays": 5403,
+  "scenarios": [
+    {
+      "anchor": "node/4965336822",
+      "stops": 3,
+      "returnTime": "2026-11-22T08:11:11.000Z"
+    },
+    {
+      "anchor": "way/108096984",
+      "stops": 3,
+      "returnTime": "2026-11-22T08:21:36.000Z"
+    }
+  ]
+}

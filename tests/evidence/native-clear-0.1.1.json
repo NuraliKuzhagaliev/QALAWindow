@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-22T15:14:55.882Z",
+  "packaged": true,
+  "version": "0.1.1",
+  "electron": "44.11.5",
+  "offlineStops": 2,
+  "clearedAfterRestart": true,
+  "managedPackRemoved": true,
+  "exportedPackPreserved": true,
+  "unrelatedFilePreserved": true,
+  "picker": "test double; actual IPC and file IO",
+  "pageErrors": []
+}

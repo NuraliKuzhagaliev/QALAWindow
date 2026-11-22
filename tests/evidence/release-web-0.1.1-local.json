@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-22T15:22:18.423Z",
+  "url": "http://127.0.0.1:8889",
+  "apiStatus": 200,
+  "liveWeather": "-0.9 °C\n\n15.5 km/h · wind · 0 mm",
+  "livePlanB": "What changed\n\nRemoved: Mega Silk Way\n\nAdded: —\n\nwalk: -3 min · spare: 13 min",
+  "browserForecastRequests": 2,
+  "manualAndDirectFallbackTested": true,
+  "timePresetRegressionTested": true,
+  "mobilePrivacy": true,
+  "aiIntercepted": 5,
+  "pageErrors": []
+}

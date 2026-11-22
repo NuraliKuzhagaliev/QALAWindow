@@ -1,0 +1,152 @@
+{
+  "at": "2026-11-22T15:35:48.003Z",
+  "dataset": "osm-2026-11-21-258b6326",
+  "passed": 24,
+  "total": 24,
+  "cases": [
+    {
+      "id": "H01",
+      "kind": "real-data",
+      "pass": true,
+      "note": "2 stops, 379s slack"
+    },
+    {
+      "id": "H02",
+      "kind": "real-data",
+      "pass": true,
+      "note": "3 stops"
+    },
+    {
+      "id": "H03",
+      "kind": "real-data",
+      "pass": true,
+      "note": "0 stops; timing invariants checked"
+    },
+    {
+      "id": "H04",
+      "kind": "real-data",
+      "pass": true,
+      "note": "Source IDs preserved"
+    },
+    {
+      "id": "H05",
+      "kind": "real-data",
+      "pass": true,
+      "note": "No invented sockets"
+    },
+    {
+      "id": "H06",
+      "kind": "real-data",
+      "pass": true,
+      "note": "No inferred quietness"
+    },
+    {
+      "id": "H07",
+      "kind": "real-data",
+      "pass": true,
+      "note": "Access requirement not established"
+    },
+    {
+      "id": "H08",
+      "kind": "real-data",
+      "pass": true,
+      "note": "Full intervals checked"
+    },
+    {
+      "id": "H09",
+      "kind": "real-data",
+      "pass": true,
+      "note": "Outdoor travel cannot disappear"
+    },
+    {
+      "id": "H10",
+      "kind": "synthetic-context/real-data",
+      "pass": true,
+      "note": "Fifth member strict access preserved"
+    },
+    {
+      "id": "H11",
+      "kind": "real-data",
+      "pass": true,
+      "note": "Query constraint applied"
+    },
+    {
+      "id": "H12",
+      "kind": "real-data",
+      "pass": true,
+      "note": "Needs explicit usable landside budget"
+    },
+    {
+      "id": "H13",
+      "kind": "synthetic",
+      "pass": true,
+      "note": "420-second difference"
+    },
+    {
+      "id": "H14",
+      "kind": "synthetic",
+      "pass": true,
+      "note": "Fairness 3 for balanced vs 0 for mean-only winner"
+    },
+    {
+      "id": "H15",
+      "kind": "synthetic",
+      "pass": true,
+      "note": "Feasible shorter outdoor plan"
+    },
+    {
+      "id": "H16",
+      "kind": "real-data",
+      "pass": true,
+      "note": "Geometry, source receipts and timestamps preserved"
+    },
+    {
+      "id": "H17",
+      "kind": "synthetic",
+      "pass": true,
+      "note": "Rejected"
+    },
+    {
+      "id": "H18",
+      "kind": "synthetic",
+      "pass": true,
+      "note": "Rejected"
+    },
+    {
+      "id": "H19",
+      "kind": "synthetic",
+      "pass": true,
+      "note": "Rejected"
+    },
+    {
+      "id": "H20",
+      "kind": "synthetic-model-response",
+      "pass": true,
+      "note": "Rejected before display"
+    },
+    {
+      "id": "H21",
+      "kind": "synthetic-model-response",
+      "pass": true,
+      "note": "Rejected"
+    },
+    {
+      "id": "H22",
+      "kind": "synthetic-model-response",
+      "pass": true,
+      "note": "Extra factual prose/fields cannot enter cards"
+    },
+    {
+      "id": "H23",
+      "kind": "real-data",
+      "pass": true,
+      "note": "No straight-line routing fallback"
+    },
+    {
+      "id": "H24",
+      "kind": "real-data/simulation",
+      "pass": true,
+      "note": "Snapshot unchanged; original result restored"
+    }
+  ]
+}

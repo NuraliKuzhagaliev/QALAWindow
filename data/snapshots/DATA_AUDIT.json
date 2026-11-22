@@ -1,0 +1,108 @@
+{
+  "retrieved_at": "2026-11-22T15:34:01.094Z",
+  "source_count": 204,
+  "accepted": 120,
+  "rejected": 8,
+  "eligible_before_limit": 196,
+  "capped": 76,
+  "categories": {
+    "cafe": 55,
+    "mall": 8,
+    "restaurant": 42,
+    "park": 6,
+    "library": 1,
+    "playground": 1,
+    "gallery": 2,
+    "attraction": 2,
+    "artwork": 3
+  },
+  "missing_hours": 57,
+  "access_unknown": 115,
+  "duplicate_candidates": [
+    [
+      "node/10559299807",
+      "node/13667384701"
+    ]
+  ],
+  "merges": [],
+  "rejected_records": [
+    {
+      "id": "node/4965763220",
+      "reason": "outside flagship coverage"
+    },
+    {
+      "id": "node/5861170185",
+      "reason": "outside flagship coverage"
+    },
+    {
+      "id": "node/5878572885",
+      "reason": "outside flagship coverage"
+    },
+    {
+      "id": "node/12854771763",
+      "reason": "outside flagship coverage"
+    },
+    {
+      "id": "node/12917093499",
+      "reason": "outside flagship coverage"
+    },
+    {
+      "id": "node/12996721851",
+      "reason": "outside flagship coverage"
+    },
+    {
+      "id": "node/13955565333",
+      "reason": "outside flagship coverage"
+    },
+    {
+      "id": "way/112456426",
+      "reason": "outside flagship coverage"
+    }
+  ],
+  "coverage": [
+    {
+      "id": "node/4965336822",
+      "name": "Мега Силк Вей",
+      "coordinates": [
+        71.4075409,
+        51.0890223
+      ],
+      "aliases": [
+        "Expo",
+        "Экспо",
+        "ЭКСПО",
+        "Mega Silk Way",
+        "Мега"
+      ]
+    },
+    {
+      "id": "way/108096984",
+      "name": "Керуен",
+      "coordinates": [
+        71.42530995,
+        51.127790149999996
+      ],
+      "aliases": [
+        "Bayterek",
+        "Baiterek",
+        "Байтерек",
+        "Бәйтерек",
+        "Nurzhol",
+        "Нұржол",
+        "Нуржол"
+      ]
+    }
+  ],
+  "boundary": {
+    "id": 3087155,
+    "bounds": {
+      "minlon": 71.2179735,
+      "minlat": 50.8576076,
+      "maxlon": 71.7851913,
+      "maxlat": 51.3511101
+    },
+    "source_url": "https://www.openstreetmap.org/relation/3087155"
+  },
+  "dataset_version": "osm-2026-11-21-258b6326",
+  "hash": "739c5657666fa954013b8cfbb3cbb9b130e33a525756d78357bb9db060ad254e"
+}

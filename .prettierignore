@@ -1,0 +1,10 @@
+node_modules
+.cache
+.tmp
+dist
+release
+deploy
+data
+public/data
+apps/site/generated-assets.ts
+docs/source

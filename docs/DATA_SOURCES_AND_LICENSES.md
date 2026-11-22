@@ -1,0 +1,13 @@
+# Data and asset register
+
+- OpenStreetMap / Overpass: https://www.openstreetmap.org/copyright and https://wiki.openstreetmap.org/wiki/Overpass_API. ODbL 1.0. Automated city boundary is relation 3087155, wikidata Q1520; its timezone tag is Asia/Almaty. Raw query, element metadata, timestamps and content hashes are retained. No Google Maps or 2GIS review/photo/contact scraping.
+- Normalized dataset: 120 POIs from a fresh collection of 631 source records. Bound to source-backed flagship anchors. Missing optional fields stay null. Audit includes source counts, rejected records, categories, duplicate candidates and timestamps. Ambiguous duplicate candidates are retained for review rather than speculative branch merges. No official venue-owned enrichment is claimed.
+- Network: 3,801 OSM highway ways from the bounded Overpass request, with real node IDs and geometry. This download used body/geometry output; upstream way modification times are unavailable in this compact layer and remain null. Relevant tags and source snapshot are retained.
+- OpenFreeMap: https://openfreemap.org/quick_start/. Attribution to OpenFreeMap, OpenMapTiles and OSM is displayed by the map. No bulk tile download. Offline packs use saved geometry and a collected-network schematic.
+- Open-Meteo: https://open-meteo.com/en/docs and https://open-meteo.com/en/pricing. CC BY 4.0 forecast attribution, non-commercial endpoint. Broad city-level coordinates only.
+- HeiGIT: https://api.heigit.org/ and https://ask.openrouteservice.org/t/deprecating-api-openrouteservice-org-in-favour-of-api-heigit-org/7912. Correct current path is /openrouteservice/v2/directions/foot-walking/geojson. Initial authorized route request timed out; this is not successful provider verification.
+- Gemini: https://ai.google.dev/gemini-api/docs/models and https://ai.google.dev/gemini-api/docs/structured-output. Exact configurable model gemini-3.5-flash-lite was successfully checked. Six grounded quality calls across EN/RU/KZ passed finite source/time invariants. Free and paid data-use terms differ.
+- Manrope and Noto Sans: locally bundled @fontsource packages, SIL Open Font License. Full font licenses are copied under assets/licenses. Kazakh/Cyrillic subsets are included. No remote font request is necessary for UI text.
+- Lucide: ISC license, dependency notices retained. QALA wordmark, window motif, layout and application icon are original AI-authored code assets. No venue photography is used.
+
+Complete dependency versions are pinned in package-lock.json. Package deprecation warnings are not silently described as a clean security audit. Before commercial launch, recheck all provider terms and data obligations.

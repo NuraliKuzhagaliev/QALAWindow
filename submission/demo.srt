@@ -1,0 +1,59 @@
+1
+00:00:01,384 --> 00:00:08,390
+QALA Window: an actual public-release session, with no account required.
+
+2
+00:00:08,489 --> 00:00:15,497
+Selected planning time: noon to 13:00 in Astana. This is not a claim of current availability.
+
+3
+00:00:20,550 --> 00:00:30,560
+A fresh query retrieves collected POIs, solves the complete return loop, then requests grounded AI wording.
+
+4
+00:00:30,582 --> 00:00:38,585
+Cards show source schedules, visit estimates and real network walking estimates. Unknowns remain visible.
+
+5
+00:00:38,645 --> 00:00:46,647
+Evidence receipts separate source facts, calculated estimates and suggested activities.
+
+6
+00:00:46,657 --> 00:00:54,669
+Field dates, raw source tags and the return calculation can be inspected. A source hash is not proof of truth.
+
+7
+00:00:56,095 --> 00:01:04,109
+Plan B applies an explicit 20-minute outdoor cap. Forecast data is timestamped; unavailable weather is a simulation.
+
+8
+00:01:08,763 --> 00:01:17,772
+The same solver recomputes the outing and reports the change. It can return zero if constraints cannot be established.
+
+9
+00:01:19,852 --> 00:01:28,858
+Network is now disabled. The local solver uses the bundled timestamped OSM snapshot; no live AI is claimed.
+
+10
+00:01:29,523 --> 00:01:36,537
+Saved routes retain their geometry, field receipts and previous text in local storage.
+
+11
+00:01:36,618 --> 00:01:45,629
+The saved route reopens offline with last-synced and stale-data warnings. Native Windows save/open is separately verified.
+
+12
+00:01:45,826 --> 00:01:54,837
+The judge desk accepts schema-validated isolated data. Imported records remain unverified and explicitly simulated.
+
+13
+00:01:56,725 --> 00:02:04,739
+Independent judge input follows the production retrieval and planner path. It never modifies the source snapshot.
+
+14
+00:02:05,018 --> 00:02:12,030
+Reset returns to the original dataset. English, Russian and Kazakh preserve original source names.
+
+15
+00:02:17,109 --> 00:02:25,114
+Remaining limits: physical access and source freshness, native Kazakh review, and unverified hosted HeiGIT access.

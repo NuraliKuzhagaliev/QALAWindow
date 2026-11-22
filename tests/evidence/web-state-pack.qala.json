@@ -1,0 +1,1718 @@
+{
+  "format": "qala-route-pack",
+  "version": 1,
+  "saved_at": "2026-10-18T19:09:02.217Z",
+  "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+  "datasetVersion": "osm-2026-10-18-a3fc82c5",
+  "result": {
+    "requestId": "9559064b-8b51-4b54-8748-84cd64e3af3b",
+    "datasetVersion": "osm-2026-10-18-a3fc82c5",
+    "retrievedAt": "2026-10-18T19:08:59.396Z",
+    "mode": "local_solver",
+    "provider": null,
+    "model": null,
+    "simulation": false,
+    "plan": {
+      "id": "node/4853972122~node/12520559589",
+      "stops": [
+        {
+          "poi": {
+            "id": "node/4853972122",
+            "name": "Фаттуш",
+            "coordinates": [
+              71.4251746,
+              51.1277607
+            ],
+            "category": "cafe",
+            "tags": [
+              "cafe",
+              "lebanese",
+              "cafe"
+            ],
+            "aliases": [
+              "Fattoush"
+            ],
+            "description": "Фаттуш · cafe",
+            "description_kind": "generated from name and category",
+            "hours": "Mo-Su 10:00-23:00",
+            "contact": "+77017330010",
+            "rating": null,
+            "popularity": null,
+            "indoor": null,
+            "entranceAccess": "unknown",
+            "sockets": null,
+            "quiet": null,
+            "childSuitable": null,
+            "price": null,
+            "visitSeconds": [
+              300,
+              900
+            ],
+            "fields": {
+              "name": {
+                "value": "Фаттуш",
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "source"
+              },
+              "coordinates": {
+                "value": [
+                  71.4251746,
+                  51.1277607
+                ],
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM node or element center",
+                "state": "source"
+              },
+              "category": {
+                "value": "cafe",
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "source"
+              },
+              "hours": {
+                "value": "Mo-Su 10:00-23:00",
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "source"
+              },
+              "contact": {
+                "value": "+77017330010",
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "source"
+              },
+              "indoor": {
+                "value": null,
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "entranceAccess": {
+                "value": null,
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "sockets": {
+                "value": null,
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "quiet": {
+                "value": null,
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "childSuitable": {
+                "value": null,
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "price": {
+                "value": null,
+                "source_id": "node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              }
+            },
+            "sources": [
+              {
+                "id": "node/4853972122",
+                "url": "https://www.openstreetmap.org/node/4853972122",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2017-05-14T18:01:39Z",
+                "raw_tags": {
+                  "amenity": "cafe",
+                  "cuisine": "lebanese",
+                  "email": "intelfoodkz@gmail.com",
+                  "internet_access": "wlan",
+                  "name": "Фаттуш",
+                  "name:en": "Fattoush",
+                  "opening_hours": "Mo-Su 10:00-23:00",
+                  "operator": "ИП INTELFOOD (ИНТЕЛФУД)",
+                  "phone": "+77017330010"
+                },
+                "hash": "68d93f2d86f910d34ba5076f537e522095ee7bd4ba18935a0dc7bfde1c5f775e",
+                "license": "ODbL-1.0"
+              }
+            ]
+          },
+          "arrival": "2026-10-18T07:01:50.000Z",
+          "departure": "2026-10-18T07:16:50.000Z",
+          "dwellSeconds": 900,
+          "hours": "scheduled",
+          "matches": [
+            3
+          ],
+          "reason": "Matches your interests within the retrieved nearby places.",
+          "activity": "Suggested activity: pause and notice one detail you would normally walk past."
+        },
+        {
+          "poi": {
+            "id": "node/12520559589",
+            "name": "Лепим и варим",
+            "coordinates": [
+              71.4254505,
+              51.1279246
+            ],
+            "category": "cafe",
+            "tags": [
+              "cafe",
+              "russian",
+              "cafe"
+            ],
+            "aliases": [],
+            "description": "Лепим и варим · cafe",
+            "description_kind": "generated from name and category",
+            "hours": "Mo-Su 10:00-22:00",
+            "contact": "https://lepimivarim.ru",
+            "rating": null,
+            "popularity": null,
+            "indoor": null,
+            "entranceAccess": "unknown",
+            "sockets": null,
+            "quiet": null,
+            "childSuitable": null,
+            "price": null,
+            "visitSeconds": [
+              300,
+              900
+            ],
+            "fields": {
+              "name": {
+                "value": "Лепим и варим",
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "source"
+              },
+              "coordinates": {
+                "value": [
+                  71.4254505,
+                  51.1279246
+                ],
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM node or element center",
+                "state": "source"
+              },
+              "category": {
+                "value": "cafe",
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "source"
+              },
+              "hours": {
+                "value": "Mo-Su 10:00-22:00",
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "source"
+              },
+              "contact": {
+                "value": null,
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "indoor": {
+                "value": null,
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "entranceAccess": {
+                "value": null,
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "sockets": {
+                "value": null,
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "quiet": {
+                "value": null,
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "childSuitable": {
+                "value": null,
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              },
+              "price": {
+                "value": null,
+                "source_id": "node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "transformation": "OSM tag",
+                "state": "unknown"
+              }
+            },
+            "sources": [
+              {
+                "id": "node/12520559589",
+                "url": "https://www.openstreetmap.org/node/12520559589",
+                "retrieved_at": "2026-10-18T17:41:14.132Z",
+                "source_updated_at": "2025-01-21T12:55:12Z",
+                "raw_tags": {
+                  "amenity": "cafe",
+                  "contact:phone": "+7 707 180 7400",
+                  "contact:website": "https://lepimivarim.ru",
+                  "cuisine": "russian",
+                  "name": "Лепим и варим",
+                  "opening_hours": "Mo-Su 10:00-22:00"
+                },
+                "hash": "8176685564ea891d2ee4b8a00f8be29c633a83f354f4efa6326e1decfc31c8df",
+                "license": "ODbL-1.0"
+              }
+            ]
+          },
+          "arrival": "2026-10-18T07:21:01.000Z",
+          "departure": "2026-10-18T07:36:01.000Z",
+          "dwellSeconds": 900,
+          "hours": "scheduled",
+          "matches": [
+            3
+          ],
+          "reason": "Matches your interests within the retrieved nearby places.",
+          "activity": "Suggested activity: pause and notice one detail you would normally walk past."
+        }
+      ],
+      "legs": [
+        {
+          "from": "start",
+          "to": "node/4853972122",
+          "metres": 126,
+          "seconds": 110,
+          "geometry": [
+            [
+              71.4260133,
+              51.1274771
+            ]
+          ],
+          "snapMetres": [
+            60,
+            66
+          ],
+          "source": "Collected OSM pedestrian network · local Dijkstra",
+          "profile": "foot (1.15 m/s modeled)",
+          "retrieved_at": "2026-10-18T17:55:54.579Z",
+          "access": "unknown",
+          "wayIds": []
+        },
+        {
+          "from": "node/4853972122",
+          "to": "node/12520559589",
+          "metres": 288,
+          "seconds": 251,
+          "geometry": [
+            [
+              71.4260133,
+              51.1274771
+            ],
+            [
+              71.426384,
+              51.1283644
+            ],
+            [
+              71.4264748,
+              51.128349
+            ],
+            [
+              71.4263195,
+              51.1278943
+            ]
+          ],
+          "snapMetres": [
+            66,
+            61
+          ],
+          "source": "Collected OSM pedestrian network · local Dijkstra",
+          "profile": "foot (1.15 m/s modeled)",
+          "retrieved_at": "2026-10-18T17:55:54.579Z",
+          "access": "unknown",
+          "wayIds": [
+            1534794847,
+            455512747,
+            1527802814
+          ]
+        },
+        {
+          "from": "node/12520559589",
+          "to": "end",
+          "metres": 282,
+          "seconds": 246,
+          "geometry": [
+            [
+              71.4263195,
+              51.1278943
+            ],
+            [
+              71.4264748,
+              51.128349
+            ],
+            [
+              71.426384,
+              51.1283644
+            ],
+            [
+              71.4260133,
+              51.1274771
+            ]
+          ],
+          "snapMetres": [
+            61,
+            60
+          ],
+          "source": "Collected OSM pedestrian network · local Dijkstra",
+          "profile": "foot (1.15 m/s modeled)",
+          "retrieved_at": "2026-10-18T17:55:54.579Z",
+          "access": "unknown",
+          "wayIds": [
+            1527802814,
+            455512747,
+            1534794847
+          ]
+        }
+      ],
+      "travelSeconds": 607,
+      "visitSeconds": 1800,
+      "outdoorSeconds": 2407,
+      "bufferSeconds": 300,
+      "slackSeconds": 893,
+      "returnTime": "2026-10-18T07:40:07.000Z",
+      "feasibility": "not_established",
+      "fairness": 6,
+      "aggregateMatch": 6,
+      "warnings": [
+        "Visit hours are unknown. Time fit is conditional on access; verify before setting out.",
+        "Route accessibility, crossings and sidewalk conditions are unverified. Network may be incomplete. Snap connectors are included in time but are not verified paths."
+      ]
+    },
+    "candidates": [
+      {
+        "id": "node/4853972122",
+        "name": "Фаттуш",
+        "coordinates": [
+          71.4251746,
+          51.1277607
+        ],
+        "category": "cafe",
+        "tags": [
+          "cafe",
+          "lebanese",
+          "cafe"
+        ],
+        "aliases": [
+          "Fattoush"
+        ],
+        "description": "Фаттуш · cafe",
+        "description_kind": "generated from name and category",
+        "hours": "Mo-Su 10:00-23:00",
+        "contact": "+77017330010",
+        "rating": null,
+        "popularity": null,
+        "indoor": null,
+        "entranceAccess": "unknown",
+        "sockets": null,
+        "quiet": null,
+        "childSuitable": null,
+        "price": null,
+        "visitSeconds": [
+          300,
+          900
+        ],
+        "fields": {
+          "name": {
+            "value": "Фаттуш",
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "coordinates": {
+            "value": [
+              71.4251746,
+              51.1277607
+            ],
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM node or element center",
+            "state": "source"
+          },
+          "category": {
+            "value": "cafe",
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "hours": {
+            "value": "Mo-Su 10:00-23:00",
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "contact": {
+            "value": "+77017330010",
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "indoor": {
+            "value": null,
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "entranceAccess": {
+            "value": null,
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "sockets": {
+            "value": null,
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "quiet": {
+            "value": null,
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "childSuitable": {
+            "value": null,
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "price": {
+            "value": null,
+            "source_id": "node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          }
+        },
+        "sources": [
+          {
+            "id": "node/4853972122",
+            "url": "https://www.openstreetmap.org/node/4853972122",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2017-05-14T18:01:39Z",
+            "raw_tags": {
+              "amenity": "cafe",
+              "cuisine": "lebanese",
+              "email": "intelfoodkz@gmail.com",
+              "internet_access": "wlan",
+              "name": "Фаттуш",
+              "name:en": "Fattoush",
+              "opening_hours": "Mo-Su 10:00-23:00",
+              "operator": "ИП INTELFOOD (ИНТЕЛФУД)",
+              "phone": "+77017330010"
+            },
+            "hash": "68d93f2d86f910d34ba5076f537e522095ee7bd4ba18935a0dc7bfde1c5f775e",
+            "license": "ODbL-1.0"
+          }
+        ]
+      },
+      {
+        "id": "node/14087643081",
+        "name": "Жылқылар үйірі",
+        "coordinates": [
+          71.4146358,
+          51.1318367
+        ],
+        "category": "attraction",
+        "tags": [
+          "attraction",
+          "attraction"
+        ],
+        "aliases": [
+          "Табун Лошадей"
+        ],
+        "description": "Жылқылар үйірі · attraction",
+        "description_kind": "generated from name and category",
+        "hours": null,
+        "contact": null,
+        "rating": null,
+        "popularity": null,
+        "indoor": null,
+        "entranceAccess": "unknown",
+        "sockets": null,
+        "quiet": null,
+        "childSuitable": null,
+        "price": null,
+        "visitSeconds": [
+          300,
+          600
+        ],
+        "fields": {
+          "name": {
+            "value": "Жылқылар үйірі",
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "coordinates": {
+            "value": [
+              71.4146358,
+              51.1318367
+            ],
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM node or element center",
+            "state": "source"
+          },
+          "category": {
+            "value": "attraction",
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "hours": {
+            "value": null,
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "contact": {
+            "value": null,
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "indoor": {
+            "value": null,
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "entranceAccess": {
+            "value": null,
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "sockets": {
+            "value": null,
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "quiet": {
+            "value": null,
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "childSuitable": {
+            "value": null,
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "price": {
+            "value": null,
+            "source_id": "node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          }
+        },
+        "sources": [
+          {
+            "id": "node/14087643081",
+            "url": "https://www.openstreetmap.org/node/14087643081",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-08-11T13:30:59Z",
+            "raw_tags": {
+              "name": "Жылқылар үйірі",
+              "name:ru": "Табун Лошадей",
+              "tourism": "attraction"
+            },
+            "hash": "9c0e11b3974c8d391770f753e27d0d02dc4188d00b555c3272fc309e7ff80529",
+            "license": "ODbL-1.0"
+          }
+        ]
+      },
+      {
+        "id": "node/12520559589",
+        "name": "Лепим и варим",
+        "coordinates": [
+          71.4254505,
+          51.1279246
+        ],
+        "category": "cafe",
+        "tags": [
+          "cafe",
+          "russian",
+          "cafe"
+        ],
+        "aliases": [],
+        "description": "Лепим и варим · cafe",
+        "description_kind": "generated from name and category",
+        "hours": "Mo-Su 10:00-22:00",
+        "contact": "https://lepimivarim.ru",
+        "rating": null,
+        "popularity": null,
+        "indoor": null,
+        "entranceAccess": "unknown",
+        "sockets": null,
+        "quiet": null,
+        "childSuitable": null,
+        "price": null,
+        "visitSeconds": [
+          300,
+          900
+        ],
+        "fields": {
+          "name": {
+            "value": "Лепим и варим",
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "coordinates": {
+            "value": [
+              71.4254505,
+              51.1279246
+            ],
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM node or element center",
+            "state": "source"
+          },
+          "category": {
+            "value": "cafe",
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "hours": {
+            "value": "Mo-Su 10:00-22:00",
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "contact": {
+            "value": null,
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "indoor": {
+            "value": null,
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "entranceAccess": {
+            "value": null,
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "sockets": {
+            "value": null,
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "quiet": {
+            "value": null,
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "childSuitable": {
+            "value": null,
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "price": {
+            "value": null,
+            "source_id": "node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          }
+        },
+        "sources": [
+          {
+            "id": "node/12520559589",
+            "url": "https://www.openstreetmap.org/node/12520559589",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-01-21T12:55:12Z",
+            "raw_tags": {
+              "amenity": "cafe",
+              "contact:phone": "+7 707 180 7400",
+              "contact:website": "https://lepimivarim.ru",
+              "cuisine": "russian",
+              "name": "Лепим и варим",
+              "opening_hours": "Mo-Su 10:00-22:00"
+            },
+            "hash": "8176685564ea891d2ee4b8a00f8be29c633a83f354f4efa6326e1decfc31c8df",
+            "license": "ODbL-1.0"
+          }
+        ]
+      },
+      {
+        "id": "node/12293708058",
+        "name": "Paul",
+        "coordinates": [
+          71.4249541,
+          51.1277142
+        ],
+        "category": "restaurant",
+        "tags": [
+          "restaurant",
+          "restaurant"
+        ],
+        "aliases": [
+          "Paul"
+        ],
+        "description": "Paul · restaurant",
+        "description_kind": "generated from name and category",
+        "hours": "Mo-Su 09:00-22:00",
+        "contact": "https://paul.kz/",
+        "rating": null,
+        "popularity": null,
+        "indoor": null,
+        "entranceAccess": "unknown",
+        "sockets": null,
+        "quiet": null,
+        "childSuitable": null,
+        "price": null,
+        "visitSeconds": [
+          300,
+          900
+        ],
+        "fields": {
+          "name": {
+            "value": "Paul",
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "coordinates": {
+            "value": [
+              71.4249541,
+              51.1277142
+            ],
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM node or element center",
+            "state": "source"
+          },
+          "category": {
+            "value": "restaurant",
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "hours": {
+            "value": "Mo-Su 09:00-22:00",
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "contact": {
+            "value": null,
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "indoor": {
+            "value": null,
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "entranceAccess": {
+            "value": null,
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "sockets": {
+            "value": null,
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "quiet": {
+            "value": null,
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "childSuitable": {
+            "value": null,
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "price": {
+            "value": null,
+            "source_id": "node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          }
+        },
+        "sources": [
+          {
+            "id": "node/12293708058",
+            "url": "https://www.openstreetmap.org/node/12293708058",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2025-06-02T14:42:52Z",
+            "raw_tags": {
+              "amenity": "restaurant",
+              "brand": "Paul",
+              "brand:wikidata": "Q3370417",
+              "contact:email": "paul.marketing.kz@gmail.com",
+              "contact:instagram": "https://instagram.com/paul_kazakhstan",
+              "contact:phone": "+7 700 965 3926",
+              "contact:website": "https://paul.kz/",
+              "name": "Paul",
+              "name:en": "Paul",
+              "opening_hours": "Mo-Su 09:00-22:00",
+              "operator": "TOO French Bakery",
+              "shop": "bakery"
+            },
+            "hash": "3a2c1e2405a4242be71a0dcb87f7d95ec02f37ff5dea9d4593a8015798c84394",
+            "license": "ODbL-1.0"
+          }
+        ]
+      },
+      {
+        "id": "node/9047331880",
+        "name": "Starbucks",
+        "coordinates": [
+          71.4254906,
+          51.1280727
+        ],
+        "category": "cafe",
+        "tags": [
+          "cafe",
+          "coffee_shop",
+          "cafe"
+        ],
+        "aliases": [
+          "Starbucks"
+        ],
+        "description": "Starbucks · cafe",
+        "description_kind": "generated from name and category",
+        "hours": "Mo-Su 09:00-23:00",
+        "contact": "https://www.starbucks.com.kz/",
+        "rating": null,
+        "popularity": null,
+        "indoor": null,
+        "entranceAccess": "unknown",
+        "sockets": null,
+        "quiet": null,
+        "childSuitable": null,
+        "price": null,
+        "visitSeconds": [
+          300,
+          900
+        ],
+        "fields": {
+          "name": {
+            "value": "Starbucks",
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "coordinates": {
+            "value": [
+              71.4254906,
+              51.1280727
+            ],
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM node or element center",
+            "state": "source"
+          },
+          "category": {
+            "value": "cafe",
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "hours": {
+            "value": "Mo-Su 09:00-23:00",
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "contact": {
+            "value": null,
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "indoor": {
+            "value": null,
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "entranceAccess": {
+            "value": null,
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "sockets": {
+            "value": null,
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "quiet": {
+            "value": null,
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "childSuitable": {
+            "value": null,
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "price": {
+            "value": null,
+            "source_id": "node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          }
+        },
+        "sources": [
+          {
+            "id": "node/9047331880",
+            "url": "https://www.openstreetmap.org/node/9047331880",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-03-22T08:44:46Z",
+            "raw_tags": {
+              "amenity": "cafe",
+              "brand": "Starbucks",
+              "brand:wikidata": "Q37158",
+              "brand:wikipedia": "en:Starbucks",
+              "contact:email": "CSupport@alshaya.kz",
+              "contact:instagram": "https://instagram.com/starbuckskz",
+              "contact:phone": "+7 727 339 9860;+7 800 0802185",
+              "contact:website": "https://www.starbucks.com.kz/",
+              "cuisine": "coffee_shop",
+              "name": "Starbucks",
+              "name:en": "Starbucks",
+              "official_name": "Starbucks Coffee",
+              "opening_hours": "Mo-Su 09:00-23:00",
+              "operator": "\"Shaya Kazakhstan\"",
+              "takeaway": "yes"
+            },
+            "hash": "19917fe8c9c70169173b6fe7575952e2b8ace417a03840da7dcdf9b3b446756a",
+            "license": "ODbL-1.0"
+          }
+        ]
+      },
+      {
+        "id": "node/13533633413",
+        "name": "Asai Restaurant Astana",
+        "coordinates": [
+          71.424491,
+          51.1299055
+        ],
+        "category": "restaurant",
+        "tags": [
+          "restaurant",
+          "regional",
+          "restaurant"
+        ],
+        "aliases": [],
+        "description": "Asai Restaurant Astana · restaurant",
+        "description_kind": "generated from name and category",
+        "hours": "Mo-Su 09:00-21:00",
+        "contact": "https://www.instagram.com/asai.restaurant/",
+        "rating": null,
+        "popularity": null,
+        "indoor": null,
+        "entranceAccess": "unknown",
+        "sockets": null,
+        "quiet": null,
+        "childSuitable": null,
+        "price": null,
+        "visitSeconds": [
+          300,
+          900
+        ],
+        "fields": {
+          "name": {
+            "value": "Asai Restaurant Astana",
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "coordinates": {
+            "value": [
+              71.424491,
+              51.1299055
+            ],
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM node or element center",
+            "state": "source"
+          },
+          "category": {
+            "value": "restaurant",
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "hours": {
+            "value": "Mo-Su 09:00-21:00",
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "contact": {
+            "value": "https://www.instagram.com/asai.restaurant/",
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "indoor": {
+            "value": null,
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "entranceAccess": {
+            "value": null,
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "sockets": {
+            "value": null,
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "quiet": {
+            "value": null,
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "childSuitable": {
+            "value": null,
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "price": {
+            "value": null,
+            "source_id": "node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          }
+        },
+        "sources": [
+          {
+            "id": "node/13533633413",
+            "url": "https://www.openstreetmap.org/node/13533633413",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-02-08T07:08:12Z",
+            "raw_tags": {
+              "addr:city": "Астана",
+              "addr:housenumber": "8/1",
+              "addr:postcode": "010000",
+              "addr:street": "Динмухамед Конаев",
+              "amenity": "restaurant",
+              "cuisine": "regional",
+              "diet:local": "yes",
+              "name": "Asai Restaurant Astana",
+              "opening_hours": "Mo-Su 09:00-21:00",
+              "phone": "7 771 439 9199",
+              "website": "https://www.instagram.com/asai.restaurant/"
+            },
+            "hash": "88ffef0ccb73de55c8a54d8c1ac45f7819223dd408f4284351e039a66ac8d0f2",
+            "license": "ODbL-1.0"
+          }
+        ]
+      },
+      {
+        "id": "node/13230394599",
+        "name": "Leto Cafe",
+        "coordinates": [
+          71.4217842,
+          51.1267692
+        ],
+        "category": "restaurant",
+        "tags": [
+          "restaurant",
+          "european;mexican;italian",
+          "restaurant"
+        ],
+        "aliases": [],
+        "description": "Leto Cafe · restaurant",
+        "description_kind": "generated from name and category",
+        "hours": "Mo-Su 12:00-02:00",
+        "contact": "https://white.kz",
+        "rating": null,
+        "popularity": null,
+        "indoor": null,
+        "entranceAccess": "unknown",
+        "sockets": null,
+        "quiet": null,
+        "childSuitable": null,
+        "price": null,
+        "visitSeconds": [
+          300,
+          900
+        ],
+        "fields": {
+          "name": {
+            "value": "Leto Cafe",
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "coordinates": {
+            "value": [
+              71.4217842,
+              51.1267692
+            ],
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM node or element center",
+            "state": "source"
+          },
+          "category": {
+            "value": "restaurant",
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "hours": {
+            "value": "Mo-Su 12:00-02:00",
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "contact": {
+            "value": "https://white.kz",
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "indoor": {
+            "value": null,
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "entranceAccess": {
+            "value": null,
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "sockets": {
+            "value": null,
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "quiet": {
+            "value": null,
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "childSuitable": {
+            "value": null,
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "price": {
+            "value": null,
+            "source_id": "node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          }
+        },
+        "sources": [
+          {
+            "id": "node/13230394599",
+            "url": "https://www.openstreetmap.org/node/13230394599",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2026-04-27T05:54:49Z",
+            "raw_tags": {
+              "addr:city": "Астана",
+              "addr:housenumber": "8Б",
+              "addr:street": "Достық көшесі",
+              "amenity": "restaurant",
+              "cuisine": "european;mexican;italian",
+              "instagram": "https://www.instagram.com/letocafe.astana/",
+              "name": "Leto Cafe",
+              "opening_hours": "Mo-Su 12:00-02:00",
+              "phone": "+77005050502",
+              "website": "https://white.kz",
+              "website:menu": "https://leto-cafe.kamiqr.com/menu/at-place"
+            },
+            "hash": "089de749f91c22201fa4a67063420edec5e3898c02d08a00434b6d868c7c8b0b",
+            "license": "ODbL-1.0"
+          }
+        ]
+      },
+      {
+        "id": "node/6408271985",
+        "name": "CrepeCafe",
+        "coordinates": [
+          71.4285934,
+          51.1293821
+        ],
+        "category": "cafe",
+        "tags": [
+          "cafe",
+          "cafe"
+        ],
+        "aliases": [],
+        "description": "CrepeCafe · cafe",
+        "description_kind": "generated from name and category",
+        "hours": "Mo-Fr 08:00-00:00; Sa-Su 09:00-00:00",
+        "contact": "https://crepecafe.kz",
+        "rating": null,
+        "popularity": null,
+        "indoor": null,
+        "entranceAccess": "unknown",
+        "sockets": null,
+        "quiet": null,
+        "childSuitable": null,
+        "price": null,
+        "visitSeconds": [
+          300,
+          900
+        ],
+        "fields": {
+          "name": {
+            "value": "CrepeCafe",
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "coordinates": {
+            "value": [
+              71.4285934,
+              51.1293821
+            ],
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM node or element center",
+            "state": "source"
+          },
+          "category": {
+            "value": "cafe",
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "hours": {
+            "value": "Mo-Fr 08:00-00:00; Sa-Su 09:00-00:00",
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "source"
+          },
+          "contact": {
+            "value": null,
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "indoor": {
+            "value": null,
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "entranceAccess": {
+            "value": null,
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "sockets": {
+            "value": null,
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "quiet": {
+            "value": null,
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "childSuitable": {
+            "value": null,
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          },
+          "price": {
+            "value": null,
+            "source_id": "node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "transformation": "OSM tag",
+            "state": "unknown"
+          }
+        },
+        "sources": [
+          {
+            "id": "node/6408271985",
+            "url": "https://www.openstreetmap.org/node/6408271985",
+            "retrieved_at": "2026-10-18T17:41:14.132Z",
+            "source_updated_at": "2023-01-16T12:14:11Z",
+            "raw_tags": {
+              "amenity": "cafe",
+              "contact:email": "info@crepecafe.kz",
+              "contact:facebook": "https://www.facebook.com/crepecafekz",
+              "contact:instagram": "https://www.instagram.com/crepecafe_kz",
+              "contact:phone": "+7 771 949 4949",
+              "contact:website": "https://crepecafe.kz",
+              "name": "CrepeCafe",
+              "opening_hours": "Mo-Fr 08:00-00:00; Sa-Su 09:00-00:00",
+              "operator": "AZAKI2019"
+            },
+            "hash": "e32ff134525ef0fa8c02445d05d54c86f5c303d71e756ebffecb93288c92960a",
+            "license": "ODbL-1.0"
+          }
+        ]
+      }
+    ],
+    "exclusions": [
+      {
+        "id": "node/14087643081",
+        "reasons": [
+          "deadline_with_buffer"
+        ]
+      },
+      {
+        "id": "node/12520559589",
+        "reasons": [
+          "deadline_with_buffer"
+        ]
+      },
+      {
+        "id": "node/12293708058",
+        "reasons": [
+          "deadline_with_buffer"
+        ]
+      },
+      {
+        "id": "node/9047331880",
+        "reasons": [
+          "deadline_with_buffer"
+        ]
+      },
+      {
+        "id": "node/13533633413",
+        "reasons": [
+          "deadline_with_buffer"
+        ]
+      },
+      {
+        "id": "node/13230394599",
+        "reasons": [
+          "deadline_with_buffer"
+        ]
+      },
+      {
+        "id": "node/6408271985",
+        "reasons": [
+          "deadline_with_buffer"
+        ]
+      },
+      {
+        "id": "node/9047331880",
+        "reasons": [
+          "walking_route_unavailable_or_snap_over_100m"
+        ]
+      },
+      {
+        "id": "node/12520559589",
+        "reasons": [
+          "walking_route_unavailable_or_snap_over_100m"
+        ]
+      },
+      {
+        "id": "node/4853972122",
+        "reasons": [
+          "deadline_with_buffer"
+        ]
+      }
+    ],
+    "trace": [
+      {
+        "stage": "retrieve",
+        "summary": "Spatial pruning + multilingual lexical ranking retrieved 16 candidates.",
+        "ids": [
+          "node/4853972122",
+          "node/14087643081",
+          "node/12520559589",
+          "node/12293708058",
+          "node/9047331880",
+          "node/13533633413",
+          "node/13230394599",
+          "node/6408271985",
+          "node/9047331868",
+          "node/7569228633",
+          "node/11162304905",
+          "node/6494912582",
+          "node/4133836392",
+          "node/13467930244",
+          "node/10564988185",
+          "node/10798946230"
+        ]
+      },
+      {
+        "stage": "constraints",
+        "summary": "0 candidate exclusions; no hard requirement relaxed. 8 routed candidates. Applied query constraints: sockets=false, quiet=false, child=false, stepFree=off. Group hard constraints remain individual: none."
+      },
+      {
+        "stage": "route",
+        "summary": "400 ordered sequences checked with outbound, inter-stop, return, full dwell and one buffer. Foot network timestamp 2026-10-18T17:55:54.579Z."
+      },
+      {
+        "stage": "rank",
+        "summary": "32 time-fitting plans. Max-min preference match first, aggregate second, evidence then walking economy. Best among retrieved candidates."
+      },
+      {
+        "stage": "validation",
+        "summary": "{\"deadline_with_buffer\":342,\"walking_route_unavailable_or_snap_over_100m\":26}"
+      }
+    ],
+    "warnings": [],
+    "elapsedMs": 1843.095399999991
+  },
+  "publicStart": true
+}

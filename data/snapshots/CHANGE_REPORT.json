@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-11-22T15:34:01.094Z",
+  "from_version": "osm-2026-10-18-a3fc82c5",
+  "to_version": "osm-2026-11-21-258b6326",
+  "added": [
+    "node/4958412863"
+  ],
+  "removed": [
+    "node/6678039485"
+  ],
+  "changed": [],
+  "source_refetched": true,
+  "source_timestamp": "2026-11-21T21:20:51Z",
+  "source_sha256": "262edc773538a4ce594f165d15643eae35a1e3f72d20ce7c079ecb727d769803"
+}
