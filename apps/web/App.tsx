@@ -58,6 +58,11 @@ import { resolveLandmark } from "../../packages/retrieval/landmarks";
 import { solve, planDiff } from "../../packages/planner/index";
 import { copy, type Language } from "./i18n";
 import { saveLocal, listLocal, deleteLocal, clearLocal } from "./storage";
+import {
+  applyExplanation,
+  ExplanationPatchSchema,
+} from "../../packages/domain/explanations";
+import { version as appVersion } from "../../package.json";
 const MapView = lazy(() => import("./MapView"));
 const api =
   window.qalaNative?.apiBase || import.meta.env.VITE_PUBLIC_API_URL || "";
@@ -323,6 +328,17 @@ export default function App() {
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 },
     );
   }
+  function updatePerson(
+    id: string,
+    changes: Partial<PlanRequest["people"][number]>,
+  ) {
+    setPeople((current) =>
+      current.map((person) =>
+        person.id === id ? { ...person, ...changes } : person,
+      ),
+    );
+    invalidate();
+  }
   function makeRequest(overrides: Partial<PlanRequest> = {}): PlanRequest {
     return RequestSchema.parse({
       query,
@@ -388,10 +404,10 @@ export default function App() {
         data = solve(pois, request, graph, snapshot.version);
         data.warnings.push(
           request.people.length
-            ? "Group preferences stay on this device. Local solver with collected OSM data."
+            ? t.groupLocal
             : devicePlanning
-              ? "Planned on this device with the bundled OpenStreetMap snapshot."
-              : "API unavailable. Replanned locally with bundled timestamped OpenStreetMap data.",
+              ? t.plannedLocally
+              : t.apiFallback,
         );
       }
       if (ticket !== generation.current) return;
@@ -400,19 +416,21 @@ export default function App() {
       setResult(data);
       setSelected(0);
       setPending(false);
-      if (server && data.plan) {
+      if (server && data.plan && !challengeApplied) {
         setAI("loading");
         try {
-          const generated: PlanResult = await jsonFetch(
-            "/api/explain",
-            {
-              method: "POST",
-              body: JSON.stringify({ requestId: data.requestId }),
-            },
-            20000,
+          const generated = ExplanationPatchSchema.parse(
+            await jsonFetch(
+              "/api/explain",
+              {
+                method: "POST",
+                body: JSON.stringify({ requestId: data.requestId }),
+              },
+              20000,
+            ),
           );
           if (ticket === generation.current) {
-            setResult(generated);
+            setResult(applyExplanation(data, generated));
             setAI("idle");
           }
         } catch {
@@ -446,13 +464,23 @@ export default function App() {
       result,
       publicStart: isPublic,
     };
+    setError("");
+    setSavedNotice("");
     try {
       validatePack(pack);
       await saveLocal(pack);
       setPacks(await listLocal());
+    } catch {
+      setError(t.saveFailed);
+      return;
+    }
+    setSavedNotice(t.savedLabel);
+    try {
       const text = JSON.stringify(pack, null, 2);
-      if (window.qalaNative) await window.qalaNative.save(text);
-      else {
+      if (window.qalaNative) {
+        const exported = await window.qalaNative.save(text);
+        setSavedNotice(exported ? t.exported : t.exportCancelled);
+      } else {
         const a = document.createElement("a");
         a.href = URL.createObjectURL(
           new Blob([text], { type: "application/json" }),
@@ -461,9 +489,8 @@ export default function App() {
         a.click();
         setTimeout(() => URL.revokeObjectURL(a.href), 1000);
       }
-      setSavedNotice(t.savedLabel);
-    } catch (e) {
-      setError((e as Error).message);
+    } catch {
+      setError(t.exportFailed);
     }
   }
   function loadPack(pack: Pack) {
@@ -525,14 +552,13 @@ export default function App() {
             e.preventDefault();
             closeDialog();
           }}
-          aria-label="QALA Window home"
         >
           <span className="brand-mark">
             <span />
             <span />
           </span>
           <span>
-            QALA<span className="brand-window">Window</span>
+            QALA <span className="brand-window">Window</span>
           </span>
         </a>
         <div className="coverage">
@@ -953,48 +979,75 @@ export default function App() {
                             className={
                               person.interests.includes(id) ? "active" : ""
                             }
-                            onClick={() => {
-                              setPeople(
-                                people.map((p, j) =>
-                                  j === i
-                                    ? {
-                                        ...p,
-                                        interests: p.interests.includes(id)
-                                          ? p.interests.filter((x) => x !== id)
-                                          : [...p.interests, id],
-                                      }
-                                    : p,
-                                ),
-                              );
-                              invalidate();
-                            }}
+                            onClick={() =>
+                              updatePerson(person.id, {
+                                interests: person.interests.includes(id)
+                                  ? person.interests.filter((x) => x !== id)
+                                  : [...person.interests, id],
+                              })
+                            }
                           >
                             {t[id]}
                           </button>
                         ))}
                       </div>
-                      <label className="check-row">
-                        <input
-                          type="checkbox"
-                          checked={person.stepFree === "required"}
-                          onChange={(e) => {
-                            setPeople(
-                              people.map((p, j) =>
-                                j === i
-                                  ? {
-                                      ...p,
-                                      stepFree: e.target.checked
-                                        ? "required"
-                                        : "off",
-                                    }
-                                  : p,
-                              ),
-                            );
-                            invalidate();
-                          }}
-                        />
-                        {t.access}: {t.required}
-                      </label>
+                      <div className="two-columns">
+                        <label>
+                          {t.access}
+                          <select
+                            value={person.stepFree}
+                            onChange={(e) =>
+                              updatePerson(person.id, {
+                                stepFree: e.target
+                                  .value as PlanRequest["stepFree"],
+                              })
+                            }
+                          >
+                            <option value="off">{t.off}</option>
+                            <option value="preferred">{t.preferred}</option>
+                            <option value="required">{t.required}</option>
+                          </select>
+                        </label>
+                        <label>
+                          {t.continuous}
+                          <input
+                            type="number"
+                            min={1}
+                            max={90}
+                            required
+                            value={
+                              Number.isFinite(person.maxWalkMinutes)
+                                ? person.maxWalkMinutes
+                                : ""
+                            }
+                            onChange={(e) =>
+                              updatePerson(person.id, {
+                                maxWalkMinutes: e.target.valueAsNumber,
+                              })
+                            }
+                          />
+                        </label>
+                      </div>
+                      {(
+                        [
+                          ["sockets", t.socket],
+                          ["quiet", t.quiet],
+                          ["child", t.child],
+                        ] as const
+                      ).map(([field, label]) => (
+                        <label className="check-row" key={field}>
+                          <input
+                            type="checkbox"
+                            checked={person[field]}
+                            onChange={(e) =>
+                              updatePerson(person.id, {
+                                [field]: e.target.checked,
+                              })
+                            }
+                          />
+                          {label}
+                        </label>
+                      ))}
                     </div>
                   ))}
                 </div>
@@ -1248,7 +1301,7 @@ export default function App() {
                 {t.judge}
                 <ArrowUpRight size={12} />
               </button>
-              <span>v0.1 · Astana</span>
+              <span>v{appVersion} · Astana</span>
             </footer>
           </div>
         </section>
@@ -1749,7 +1802,7 @@ export default function App() {
               {desktopDownload ? (
                 <a className="primary-button" href={desktopDownload} download>
                   <Download size={17} />
-                  Windows portable · 0.1.2
+                  Windows portable · {appVersion}
                 </a>
               ) : (
                 <p className="notice">

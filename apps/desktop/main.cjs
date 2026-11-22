@@ -97,6 +97,7 @@ app.whenReady().then(async () => {
       nodeIntegration: false,
       contextIsolation: true,
       sandbox: true,
+      additionalArguments: [`--qala-version=${app.getVersion()}`],
     },
   });
   window.webContents.session.webRequest.onHeadersReceived((details, callback) =>

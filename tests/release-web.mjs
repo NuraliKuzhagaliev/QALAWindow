@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { chromium } from "@playwright/test";
 
 const url = process.argv[2] || "http://127.0.0.1:8887";
 const tag = new URL(url).hostname === "127.0.0.1" ? "local" : "public";
+const { version } = JSON.parse(await readFile("package.json", "utf8"));
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({
   viewport: { width: 1280, height: 800 },
@@ -124,7 +125,7 @@ try {
     pageErrors,
   };
   await writeFile(
-    `tests/evidence/release-web-0.1.1-${tag}.json`,
+    `tests/evidence/release-web-${version}-${tag}.json`,
     JSON.stringify(result, null, 2),
   );
   console.log(JSON.stringify(result, null, 2));

@@ -2,7 +2,7 @@
 
 Astana, within the time you have. A shared TypeScript product for a responsive public web app and a genuine Windows application. Built for the Smart City track. No account required.
 
-[Open QALA Window](https://nuralikuzhagaliev.github.io/QALAWindow/) · [Windows portable and SHA256](https://github.com/NuraliKuzhagaliev/QALAWindow/releases/tag/v0.1.2)
+[Open QALA Window](https://nuralikuzhagaliev.github.io/QALAWindow/) · [Windows portable and SHA256](https://github.com/NuraliKuzhagaliev/QALAWindow/releases/latest)
 
 ## Run on Windows, with all writes on D:
 
@@ -15,7 +15,7 @@ npm start
 # http://127.0.0.1:8787
 ```
 
-Development: `npm run api` and `npm run dev` in two terminals after sourcing `scripts/env.ps1` in each. Node 22.20+ and npm are used. TypeScript 6.0 is selected for current ESLint parser compatibility. Lockfile pins the actual dependencies.
+Use Node 22.23.5 or a newer supported Node release. For development, run `npm run api` and `npm run dev` in separate terminals after sourcing `scripts/env.ps1` in each. The lockfile pins npm dependencies.
 
 `scripts/env.ps1` sets TEMP, TMP, TMPDIR, npm, pip, Electron, electron-builder, Playwright, XDG, Cargo and Rust caches to project directories on D:. `.npmrc` provides a second npm cache safeguard. Do not install before loading the environment. Preinstalled read-only runtimes on C: may be used; no project installation goes there.
 

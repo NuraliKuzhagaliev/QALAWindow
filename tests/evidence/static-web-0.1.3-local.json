@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-22T16:07:26.033Z",
+  "url": "http://127.0.0.1:55472/QALAWindow/",
+  "dataset": "osm-2026-11-21-258b6326",
+  "source": "2026-11-21T21:20:51Z",
+  "cards": 3,
+  "weather": true,
+  "asset": "https://github.com/NuraliKuzhagaliev/QALAWindow/releases/download/v0.1.3/QALAWindow-0.1.3-Windows-x64.exe",
+  "groupPreferences": true,
+  "mobilePrivacy": true,
+  "attributionOverlap": false,
+  "fallbackAxeViolations": 0,
+  "applicationApiRequests": 0,
+  "errors": []
+}

@@ -1,0 +1,13 @@
+{
+  "at": "2026-11-22T16:04:00.733Z",
+  "url": "http://127.0.0.1:8887",
+  "apiStatus": 200,
+  "liveWeather": "-1.1 °C\n\n15.8 km/h · wind · 0 mm",
+  "livePlanB": "What changed\n\nRemoved: Дареджани\n\nAdded: —\n\nwalk: -18 min · spare: 33 min",
+  "browserForecastRequests": 2,
+  "manualAndDirectFallbackTested": true,
+  "timePresetRegressionTested": true,
+  "mobilePrivacy": true,
+  "aiIntercepted": 5,
+  "pageErrors": []
+}

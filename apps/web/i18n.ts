@@ -103,7 +103,7 @@ export const copy = {
     reset: "Reset challenge",
     closeStop: "Simulate a closure",
     privacyBody:
-      "Manual location is the default. Routing providers receive the coordinates necessary to plan. Gemini receives public POI facts and typed interests, without raw query text or exact coordinates. Providers and hosts may keep their own logs. No account, tracking or ad analytics. Saved packs stay on this device until you export or delete them.",
+      "Manual location is the default. If enabled, the routing service receives coordinates and Gemini receives public place facts and selected interest categories. Saved packs stay on this device until you export or delete them. Providers and hosts may keep their own logs.",
     clear: "Clear saved data",
     clearDone: "Saved data cleared.",
     clearFailed: "Some saved data could not be cleared. Try again.",
@@ -131,6 +131,16 @@ export const copy = {
     simulationOff: "Reset simulations",
     attribution: "© OpenStreetMap contributors · ODbL 1.0",
     savedLabel: "Saved locally",
+    saveFailed: "Could not save this walk on this device.",
+    exported: "Walk saved on this device and exported to a file.",
+    exportCancelled: "Walk saved on this device. File export cancelled.",
+    exportFailed: "Walk saved on this device. Could not export the file.",
+    groupLocal:
+      "Group preferences stay on this device. The route uses OpenStreetMap data.",
+    plannedLocally:
+      "Planned on this device with the bundled OpenStreetMap snapshot.",
+    apiFallback:
+      "The planning service is unavailable. This walk uses the local OpenStreetMap snapshot.",
     noSaved: "Your saved walks will appear here.",
     timeFit: "Your time, accounted for",
     constraints: "Inputs used",
@@ -276,6 +286,17 @@ export const copy = {
     simulationOff: "Сбросить симуляции",
     attribution: "© Участники OpenStreetMap · ODbL 1.0",
     savedLabel: "Сохранено на устройстве",
+    saveFailed: "Не удалось сохранить прогулку на устройстве.",
+    exported: "Прогулка сохранена на устройстве и экспортирована в файл.",
+    exportCancelled: "Прогулка сохранена на устройстве. Экспорт файла отменён.",
+    exportFailed:
+      "Прогулка сохранена на устройстве. Не удалось экспортировать файл.",
+    groupLocal:
+      "Настройки группы остаются на устройстве. Маршрут использует данные OpenStreetMap.",
+    plannedLocally:
+      "Маршрут рассчитан на устройстве по сохранённым данным OpenStreetMap.",
+    apiFallback:
+      "Сервис планирования недоступен. Маршрут рассчитан по сохранённым данным OpenStreetMap.",
     noSaved: "Здесь появятся сохранённые маршруты.",
     timeFit: "Каждая минута учтена",
     constraints: "Использованные условия",
@@ -421,6 +442,18 @@ export const copy = {
     simulationOff: "Симуляцияны тазалау",
     attribution: "© OpenStreetMap қатысушылары · ODbL 1.0",
     savedLabel: "Құрылғыда сақталды",
+    saveFailed: "Серуенді құрылғыға сақтау мүмкін болмады.",
+    exported: "Серуен құрылғыда сақталып, файлға экспортталды.",
+    exportCancelled:
+      "Серуен құрылғыда сақталды. Файлға экспорттаудан бас тартылды.",
+    exportFailed:
+      "Серуен құрылғыда сақталды. Файлға экспорттау мүмкін болмады.",
+    groupLocal:
+      "Топ баптаулары құрылғыда қалады. Бағыт OpenStreetMap деректеріне негізделген.",
+    plannedLocally:
+      "Бағыт құрылғыда сақталған OpenStreetMap деректерімен есептелді.",
+    apiFallback:
+      "Жоспарлау қызметі қолжетімсіз. Бағыт сақталған OpenStreetMap деректерімен есептелді.",
     noSaved: "Сақталған бағыттар осында көрсетіледі.",
     timeFit: "Әр минут есепте",
     constraints: "Қолданылған талаптар",

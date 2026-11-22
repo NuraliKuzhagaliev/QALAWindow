@@ -17,6 +17,7 @@ const dir = await mkdtemp(resolve(`.tmp/native-clear-${version}-`));
 const managed = resolve(dir, "profile/packs");
 const managedPack = resolve(managed, "built-in.qala.json");
 const exportedPack = resolve(dir, "exported.qala.json");
+const newlyExportedPack = resolve(dir, "newly-exported.qala.json");
 const otherFile = resolve(managed, "keep.txt");
 const executable = resolve("release/windows/win-unpacked/QALA Window.exe");
 await mkdir(managed, { recursive: true });
@@ -93,16 +94,54 @@ try {
     .click();
   const offlineStops = await page.locator(".place-card").count();
   assert.ok(offlineStops > 0);
+  const save = page.getByRole("button", {
+    name: "Save route pack",
+    exact: true,
+  });
+  await app.evaluate(({ dialog }) => {
+    dialog.showSaveDialog = async () => ({ canceled: true, filePath: "" });
+  });
+  await save.click();
+  await page
+    .getByText("Walk saved on this device. File export cancelled.", {
+      exact: true,
+    })
+    .waitFor();
+  await assert.rejects(access(newlyExportedPack), { code: "ENOENT" });
+  await app.evaluate(({ dialog }, filePath) => {
+    dialog.showSaveDialog = async () => ({ canceled: false, filePath });
+  }, newlyExportedPack);
+  await save.click();
+  await page
+    .getByText("Walk saved on this device and exported to a file.", {
+      exact: true,
+    })
+    .waitFor();
+  const exportData = JSON.parse(await readFile(newlyExportedPack, "utf8"));
+  assert.equal(exportData.format, "qala-route-pack");
+  await app.evaluate(({ dialog }, filePath) => {
+    dialog.showSaveDialog = async () => ({ canceled: false, filePath });
+  }, managed);
+  await save.click();
+  await page
+    .getByText("Walk saved on this device. Could not export the file.", {
+      exact: true,
+    })
+    .waitFor();
   await page.getByRole("button", { name: "Privacy", exact: true }).click();
   await page
     .getByRole("button", { name: "Clear saved data", exact: true })
     .click();
   await page.getByText("Saved data cleared.", { exact: true }).waitFor();
-  await page.getByRole("button", { name: "Close", exact: true }).click();
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: "Close", exact: true })
+    .click();
   await page.getByRole("button", { name: "Saved walks", exact: true }).click();
   assert.equal(await page.locator(".saved-pack").count(), 0);
   await assert.rejects(access(managedPack), { code: "ENOENT" });
   await access(exportedPack);
+  await access(newlyExportedPack);
   await access(otherFile);
   assert.deepEqual(pageErrors, []);
   await app.close();
@@ -120,6 +159,9 @@ try {
     unrelatedFilePreserved: true,
     geolocationPermissionWithEmulatedPosition: true,
     platformLocation,
+    nativeExportCancelled: true,
+    nativeExportWritten: true,
+    nativeExportErrorReported: true,
     picker: "test double; actual IPC and file IO",
     pageErrors,
   };

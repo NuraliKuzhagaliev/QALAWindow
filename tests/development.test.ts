@@ -165,6 +165,26 @@ test("D24 preferred access ranks tagged entrances but does not create route evid
   assert.equal(p.stops[0].poi.id, "tagged");
   assert.equal(p.legs[0].access, "unknown");
 });
+test("Strict step-free checks the entrance and every leg including the return", () => {
+  const request = baseRequest({ stepFree: "required" });
+  const place = poi("verified", { entranceAccess: "tagged" });
+  const graph = fixtureGraph(300, { access: "tagged" });
+  const result = run([place], request, graph);
+  assert.ok(result.plan);
+  assert.ok(result.plan.legs.every((leg) => leg.access === "tagged"));
+  assert.equal(run([poi()], request, graph).plan, null);
+  const routes = {
+    ...graph,
+    route: (...args: Parameters<typeof graph.route>) => {
+      const leg = graph.route(...args)!;
+      return {
+        ...leg,
+        access: leg.to === "end" ? ("unknown" as const) : leg.access,
+      };
+    },
+  } as WalkingGraph;
+  assert.equal(run([place], request, routes).plan, null);
+});
 test("D25 any group member hard constraint survives", () =>
   assert.equal(
     run(

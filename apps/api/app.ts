@@ -16,7 +16,8 @@ import {
   type WeatherSnapshot,
 } from "../../packages/domain/weather";
 import {
-  explain,
+  generateExplanation,
+  prepareExplanation,
   hostedMatrix,
   hydrateDirections,
   type ProviderConfig,
@@ -30,17 +31,18 @@ export function createApp(
   const app = new Hono();
   let active = 0;
   const buckets = new Map<string, { count: number; reset: number }>();
+  const explanationTTL = 120_000;
   const pendingExplanations = new Map<
     string,
     {
-      context: {
-        language: ReturnType<typeof RequestSchema.parse>["language"];
-        interests: ReturnType<typeof RequestSchema.parse>["interests"];
-      };
-      result: ReturnType<typeof solve>;
-      at: number;
+      context: NonNullable<ReturnType<typeof prepareExplanation>>;
+      expiresAt: number;
     }
   >();
+  const expireExplanations = (now: number) => {
+    for (const [id, entry] of pendingExplanations)
+      if (entry.expiresAt <= now) pendingExplanations.delete(id);
+  };
   app.use(
     "/api/*",
     bodyLimit({
@@ -167,14 +169,20 @@ export function createApp(
           );
         }
       }
-      for (const [key, value] of pendingExplanations)
-        if (Date.now() - value.at > 120000) pendingExplanations.delete(key);
-      if (result.plan)
+      const now = Date.now();
+      expireExplanations(now);
+      const context = !payload.challenge && prepareExplanation(result, request);
+      if (context) {
         pendingExplanations.set(result.requestId, {
-          context: { language: request.language, interests: request.interests },
-          result,
-          at: Date.now(),
+          context,
+          expiresAt: now + explanationTTL,
         });
+        if (typeof process !== "undefined" && process.release?.name === "node")
+          setTimeout(
+            () => expireExplanations(Date.now()),
+            explanationTTL,
+          ).unref?.();
+      }
       if (pendingExplanations.size > 100)
         pendingExplanations.delete(pendingExplanations.keys().next().value!);
       return c.json(result);
@@ -191,12 +199,11 @@ export function createApp(
   app.post("/api/explain", async (c) => {
     try {
       const payload = await c.req.json();
+      expireExplanations(Date.now());
       const saved = pendingExplanations.get(payload.requestId);
-      if (!saved || Date.now() - saved.at > 120000)
-        throw new Error("Plan expired");
+      if (!saved) throw new Error("Plan expired");
       pendingExplanations.delete(payload.requestId);
-      // Reuse the exact validated server plan. No client-created facts or model timing decisions.
-      const generated = await explain(saved.result, saved.context, config);
+      const generated = await generateExplanation(saved.context, config);
       return c.json(generated);
     } catch (e) {
       return c.json(

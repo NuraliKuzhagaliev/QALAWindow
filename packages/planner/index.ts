@@ -42,17 +42,18 @@ export function hoursDuring(
     return "unknown";
   }
 }
+function requiresStepFree(r: PlanRequest) {
+  return (
+    r.stepFree === "required" ||
+    r.people.some((person) => person.stepFree === "required")
+  );
+}
 export function hardReasons(p: POI, r: PlanRequest) {
   const reasons: string[] = [];
   if (r.closedIds.includes(p.id)) reasons.push("simulated_closed");
   const people = r.people;
-  const strictAccess =
-    r.stepFree === "required" || people.some((x) => x.stepFree === "required");
-  if (strictAccess) {
-    if (p.entranceAccess !== "tagged")
-      reasons.push("entrance_access_unverified");
-    reasons.push("route_step_free_unverified");
-  }
+  if (requiresStepFree(r) && p.entranceAccess !== "tagged")
+    reasons.push("entrance_access_unverified");
   for (const key of ["sockets", "quiet", "childSuitable"] as const) {
     const required =
       key === "childSuitable"
@@ -170,6 +171,12 @@ export function solve(
   const start = Date.parse(r.startTime),
     deadline = Date.parse(r.deadline),
     buffer = r.bufferMinutes * 60;
+  const strictAccess = requiresStepFree(interpreted);
+  const walkLimit =
+    Math.min(
+      r.maxWalkMinutes,
+      ...r.people.map((person) => person.maxWalkMinutes),
+    ) * 60;
   const plans: Plan[] = [];
   let attempted = 0;
   const failureCounts = new Map<string, number>();
@@ -196,10 +203,13 @@ export function solve(
         return;
       }
       if (
-        leg.seconds >
-        Math.min(r.maxWalkMinutes, ...r.people.map((p) => p.maxWalkMinutes)) *
-          60
+        strictAccess &&
+        (leg.access !== "tagged" || leg.snapMetres.some((gap) => gap !== 0))
       ) {
+        fail(poi.id, "route_step_free_unverified");
+        return;
+      }
+      if (leg.seconds > walkLimit) {
         fail(poi.id, "continuous_walk_limit");
         return;
       }
@@ -247,9 +257,13 @@ export function solve(
       return;
     }
     if (
-      back.seconds >
-      Math.min(r.maxWalkMinutes, ...r.people.map((p) => p.maxWalkMinutes)) * 60
+      strictAccess &&
+      (back.access !== "tagged" || back.snapMetres.some((gap) => gap !== 0))
     ) {
+      fail(from, "route_step_free_unverified");
+      return;
+    }
+    if (back.seconds > walkLimit) {
       fail(from, "return_continuous_walk_limit");
       return;
     }
