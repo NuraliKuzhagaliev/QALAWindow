@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-22T16:39:42.691Z",
+  "packaged": true,
+  "version": "0.1.4",
+  "electron": "44.11.5",
+  "offlineStops": 2,
+  "clearedAfterRestart": true,
+  "managedPackRemoved": true,
+  "exportedPackPreserved": true,
+  "unrelatedFilePreserved": true,
+  "geolocationPermissionWithEmulatedPosition": true,
+  "platformLocation": true,
+  "nativeExportCancelled": true,
+  "nativeExportWritten": true,
+  "nativeExportErrorReported": true,
+  "repeatedExportRetainsOneLocalCopy": true,
+  "invalidPackErrorVisible": true,
+  "importedExactLocationRequiresConsentToExport": true,
+  "picker": "test double; actual IPC and file IO",
+  "pageErrors": []
+}

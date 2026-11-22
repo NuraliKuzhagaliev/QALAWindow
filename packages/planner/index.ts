@@ -72,17 +72,46 @@ const text = {
     neutral: "A nearby option from the collected dataset.",
     activity:
       "Suggested activity: pause and notice one detail you would normally walk past.",
+    airport:
+      "Airport excursion budget is not established. Flight time does not equal free time.",
+    noFit:
+      "No plan establishes your constraints. Try increasing time, moving the start, or explicitly relaxing an unmet requirement.",
+    fairness:
+      "At least one person has no positive preference match. Hard constraints remain enforced.",
+    hours: "Visit hours are unknown. Check access before setting out.",
+    access:
+      "Route accessibility, crossings and sidewalk conditions are unverified. Network may be incomplete. Snap connectors are included in time but are not verified paths.",
   },
   ru: {
     why: "Соответствует интересам среди найденных мест рядом.",
     neutral: "Место поблизости из собранного набора данных.",
     activity:
       "Идея: остановитесь и найдите одну деталь, которую обычно не замечаете.",
+    airport:
+      "Укажите, сколько времени у вас есть для прогулки с учётом возвращения в аэропорт.",
+    noFit:
+      "Подходящий маршрут не найден. Увеличьте время, смените старт или измените одно из требований.",
+    fairness:
+      "Маршрут не учитывает интересы хотя бы одного участника. Все обязательные условия соблюдены.",
+    hours:
+      "Время работы неизвестно. Уточните возможность посещения перед выходом.",
+    access:
+      "Доступность маршрута, переходы и состояние тротуаров не проверены. Модель учитывает подходы к дорожной сети, для которых нет подтверждённых путей.",
   },
   kk: {
     why: "Жақын жерден табылған орындардың ішінде қызығушылығыңызға сай.",
     neutral: "Жиналған деректердегі жақын орын.",
     activity: "Идея: тоқтап, әдетте байқамайтын бір бөлшекке назар аударыңыз.",
+    airport:
+      "Әуежайға қайта оралу уақытын ескеріп, серуенге қанша уақыт бөле алатыныңызды көрсетіңіз.",
+    noFit:
+      "Талаптарға сай бағыт табылмады. Уақытты ұзартып, бастапқы нүктені не талаптардың бірін өзгертіп көріңіз.",
+    fairness:
+      "Бағыт кемінде бір қатысушының қызығушылығына сай келмеді. Міндетті талаптар сақталды.",
+    hours:
+      "Жұмыс уақыты белгісіз. Жолға шықпас бұрын кіру мүмкіндігін тексеріңіз.",
+    access:
+      "Бағыттың қолжетімділігі, өткелдер мен тротуардың күйі тексерілмеген. Жол желісіне қосылатын тұстар есепке алынған, бірақ олардың жай-күйі белгісіз.",
   },
 };
 export function solve(
@@ -96,6 +125,7 @@ export function solve(
     warnings: string[] = [],
     exclusions: PlanResult["exclusions"] = [],
     trace: PlanResult["trace"] = [];
+  const labels = text[r.language];
   const base = {
     requestId,
     datasetVersion,
@@ -121,9 +151,7 @@ export function solve(
             "Explicit usable landside budget required. Stay at the airport until this is established.",
         },
       ],
-      warnings: [
-        "Airport excursion budget is not established. Flight time does not equal free time.",
-      ],
+      warnings: [labels.airport],
       elapsedMs: performance.now() - begin,
     };
   const interpreted = {
@@ -317,12 +345,13 @@ export function solve(
       fairness,
       aggregateMatch,
       warnings: [
-        ...(uncertain
-          ? [
-              "Visit hours are unknown. Time fit is conditional on access; verify before setting out.",
-            ]
+        ...(stops.some((s) => s.hours !== "scheduled") ? [labels.hours] : []),
+        ...(legs.some(
+          (leg) =>
+            leg.access !== "tagged" || leg.snapMetres.some((gap) => gap !== 0),
+        )
+          ? [labels.access]
           : []),
-        "Route accessibility, crossings and sidewalk conditions are unverified. Network may be incomplete. Snap connectors are included in time but are not verified paths.",
       ],
     });
   }
@@ -369,14 +398,9 @@ export function solve(
       summary: JSON.stringify(Object.fromEntries(failureCounts)),
     },
   );
-  if (!plans.length)
-    warnings.push(
-      "No plan establishes your constraints. Try increasing time, moving the start, or explicitly relaxing an unmet requirement.",
-    );
+  if (!plans.length) warnings.push(labels.noFit);
   if (r.people.length && plans[0]?.fairness === 0)
-    warnings.push(
-      "At least one person has no positive preference match. Hard constraints remain enforced.",
-    );
+    warnings.push(labels.fairness);
   return {
     ...base,
     plan: plans[0] ?? null,

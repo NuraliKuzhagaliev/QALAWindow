@@ -153,6 +153,15 @@ test("D23 strict step-free excludes unverified route even tagged entrance", () =
     ).plan,
     null,
   ));
+test("Route uncertainty and empty-plan messages follow the requested language", () => {
+  const request = baseRequest({ language: "ru" });
+  const normal = run([poi("unknown-hours", { hours: null })], request);
+  assert.ok(normal.plan);
+  assert.match(normal.plan.warnings.join(" "), /Время работы неизвестно/);
+  assert.match(normal.plan.warnings.join(" "), /Доступность маршрута/);
+  const empty = run([], baseRequest({ language: "kk" }));
+  assert.match(empty.warnings.join(" "), /Талаптарға сай бағыт табылмады/);
+});
 test("D24 preferred access ranks tagged entrances but does not create route evidence", () => {
   const r = baseRequest({
     stepFree: "preferred",

@@ -68,6 +68,32 @@ try {
   await page.locator(".place-card").first().waitFor();
   const cards = await page.locator(".place-card").count();
   assert.ok(cards >= 1 && cards <= 3);
+  const savePack = page.getByRole("button", {
+    name: "Save route pack",
+    exact: true,
+  });
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const download = page.waitForEvent("download");
+    await savePack.click();
+    assert.match((await download).suggestedFilename(), /\.qala\.json$/);
+  }
+  await page.getByRole("button", { name: "Saved walks", exact: true }).click();
+  assert.equal(await page.locator(".saved-pack").count(), 1);
+  await page.locator('input[type="file"]').setInputFiles({
+    name: "invalid.qala.json",
+    mimeType: "application/json",
+    buffer: Buffer.from("invalid test pack"),
+  });
+  await page
+    .getByRole("dialog")
+    .getByRole("alert")
+    .getByText("Choose a valid QALA route pack (.qala.json).", { exact: true })
+    .waitFor();
+  assert.equal(await page.locator(".saved-pack").count(), 1);
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: "Close", exact: true })
+    .click();
   await page
     .getByRole("button", { name: "Find a Plan B", exact: true })
     .click();
@@ -187,6 +213,8 @@ try {
     weather: true,
     asset,
     groupPreferences: true,
+    repeatedExportRetainsOneLocalCopy: true,
+    invalidImportKeepsSavedWalks: true,
     mobilePrivacy: true,
     attributionOverlap: false,
     fallbackAxeViolations: axe.violations.length,

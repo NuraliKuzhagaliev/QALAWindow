@@ -158,6 +158,9 @@ export default function App() {
     [clearing, setClearing] = useState(false),
     [clearState, setClearState] = useState<"idle" | "done" | "failed">("idle"),
     [exactConsent, setExactConsent] = useState(false),
+    [saving, setSaving] = useState(false),
+    [opening, setOpening] = useState(false),
+    [openError, setOpenError] = useState(""),
     [savedNotice, setSavedNotice] = useState(""),
     [offline, setOffline] = useState(!navigator.onLine),
     [loadedPack, setLoadedPack] = useState<Pack | null>(null);
@@ -448,35 +451,38 @@ export default function App() {
     invalidate();
     if (result) setResult(null);
   }
+  const publicStart =
+    loadedPack?.publicStart ?? (!custom || Boolean(sourceLocationName));
   async function save() {
-    if (!snapshot || !result?.plan) return;
-    const isPublic = !custom || Boolean(sourceLocationName);
-    if (!isPublic && !exactConsent) {
+    if (saving || !snapshot || !result?.plan) return;
+    if (!publicStart && !exactConsent) {
       setError(t.packConsent);
       return;
     }
-    const pack: Pack = {
+    const pack: Pack = loadedPack ?? {
       format: "qala-route-pack",
       version: 1,
       saved_at: new Date().toISOString(),
       attribution: snapshot.attribution,
       datasetVersion: result.datasetVersion,
       result,
-      publicStart: isPublic,
+      publicStart,
     };
     setError("");
     setSavedNotice("");
+    setSaving(true);
+    let saved: Pack;
     try {
-      validatePack(pack);
-      await saveLocal(pack);
+      saved = await saveLocal(validatePack(pack));
       setPacks(await listLocal());
     } catch {
       setError(t.saveFailed);
+      setSaving(false);
       return;
     }
     setSavedNotice(t.savedLabel);
     try {
-      const text = JSON.stringify(pack, null, 2);
+      const text = JSON.stringify(saved, null, 2);
       if (window.qalaNative) {
         const exported = await window.qalaNative.save(text);
         setSavedNotice(exported ? t.exported : t.exportCancelled);
@@ -485,12 +491,14 @@ export default function App() {
         a.href = URL.createObjectURL(
           new Blob([text], { type: "application/json" }),
         );
-        a.download = `QALA-${pack.saved_at.slice(0, 10)}.qala.json`;
+        a.download = `QALA-${saved.saved_at.slice(0, 10)}.qala.json`;
         a.click();
         setTimeout(() => URL.revokeObjectURL(a.href), 1000);
       }
     } catch {
       setError(t.exportFailed);
+    } finally {
+      setSaving(false);
     }
   }
   function loadPack(pack: Pack) {
@@ -503,6 +511,10 @@ export default function App() {
       warnings: [...pack.result.warnings, t.stale],
     });
     setLoadedPack(pack);
+    setExactConsent(false);
+    setError("");
+    setOpenError("");
+    setSavedNotice("");
     setSelected(0);
     setPanel(null);
     setAI("idle");
@@ -510,24 +522,42 @@ export default function App() {
     setPending(false);
   }
   async function openPack(text: string) {
+    if (new TextEncoder().encode(text).length > 5000000) {
+      setOpenError(t.packTooLarge);
+      return;
+    }
+    let pack: Pack;
     try {
-      if (new TextEncoder().encode(text).length > 5000000)
-        throw new Error("Pack exceeds 5 MB");
-      const pack = validatePack(JSON.parse(text));
-      await saveLocal(pack);
+      pack = validatePack(JSON.parse(text));
+    } catch {
+      setOpenError(t.packInvalid);
+      return;
+    }
+    try {
+      const saved = await saveLocal(pack);
       setPacks(await listLocal());
-      loadPack(pack);
-    } catch (e) {
-      setError((e as Error).message);
+      loadPack(saved);
+    } catch {
+      setOpenError(t.packReadFailed);
     }
   }
   async function openNative() {
+    setOpenError("");
     if (window.qalaNative) {
-      const text = await window.qalaNative.open();
-      if (text) await openPack(text);
+      if (opening) return;
+      setOpening(true);
+      try {
+        const text = await window.qalaNative.open();
+        if (text !== null) await openPack(text);
+      } catch {
+        setOpenError(t.packReadFailed);
+      } finally {
+        setOpening(false);
+      }
     } else upload.current?.click();
   }
   const closeDialog = () => {
+    setOpenError("");
     setPanel(null);
     setReceipt(null);
   };
@@ -1203,7 +1233,11 @@ export default function App() {
                       </div>
                       <p className="route-caution">{t.aboutRoute}</p>
                       <div className="result-actions">
-                        <button className="secondary-button" onClick={save}>
+                        <button
+                          className="secondary-button"
+                          onClick={save}
+                          disabled={saving}
+                        >
                           <Download size={15} />
                           {t.save}
                         </button>
@@ -1218,7 +1252,7 @@ export default function App() {
                           {t.planB}
                         </button>
                       </div>
-                      {custom && (
+                      {!publicStart && (
                         <label className="check-row">
                           <input
                             type="checkbox"
@@ -1385,8 +1419,12 @@ export default function App() {
         onChange={async (e) => {
           const file = e.target.files?.[0];
           if (file) {
-            if (file.size > 5000000) setError("Pack exceeds 5 MB");
-            else await openPack(await file.text());
+            try {
+              if (file.size > 5000000) setOpenError(t.packTooLarge);
+              else await openPack(await file.text());
+            } catch {
+              setOpenError(t.packReadFailed);
+            }
           }
           e.target.value = "";
         }}
@@ -1544,10 +1582,19 @@ export default function App() {
           )}
           {panel === "saved" && (
             <>
-              <button className="secondary-button" onClick={openNative}>
+              <button
+                className="secondary-button"
+                onClick={openNative}
+                disabled={opening}
+              >
                 <FolderOpen size={16} />
                 {t.open}
               </button>
+              {openError && (
+                <p className="notice" role="alert">
+                  {openError}
+                </p>
+              )}
               {packs.length === 0 && <p>{t.noSaved}</p>}
               {packs.map((pack) => (
                 <div className="saved-pack" key={pack.saved_at}>
@@ -1819,10 +1866,19 @@ export default function App() {
                 </p>
               )}
               <p className="fine-print">{t.notSigned}</p>
-              <button className="secondary-button" onClick={openNative}>
+              <button
+                className="secondary-button"
+                onClick={openNative}
+                disabled={opening}
+              >
                 <FolderOpen size={15} />
                 {t.open}
               </button>
+              {openError && (
+                <p className="notice" role="alert">
+                  {openError}
+                </p>
+              )}
             </>
           )}
         </div>

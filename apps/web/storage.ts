@@ -6,15 +6,47 @@ const db = () =>
       database.createObjectStore("packs", { keyPath: "saved_at" });
     },
   });
-export async function saveLocal(pack: Pack) {
+export async function saveLocal(pack: Pack): Promise<Pack> {
   const d = await db();
-  await d.put("packs", pack);
+  try {
+    const tx = d.transaction("packs", "readwrite");
+    const stored: Pack[] = await tx.store.getAll();
+    const sameRoute = stored
+      .reverse()
+      .find(
+        (item) =>
+          item.result.requestId === pack.result.requestId &&
+          item.datasetVersion === pack.datasetVersion &&
+          item.publicStart === pack.publicStart &&
+          item.result.plan?.id === pack.result.plan?.id &&
+          item.result.plan?.returnTime === pack.result.plan?.returnTime &&
+          JSON.stringify(item.result.plan?.legs) ===
+            JSON.stringify(pack.result.plan?.legs),
+      );
+    let savedAt = sameRoute?.saved_at ?? pack.saved_at;
+    if (!sameRoute) {
+      const occupied = new Set(stored.map((item) => item.saved_at));
+      let time = Date.parse(savedAt);
+      while (occupied.has(savedAt)) savedAt = new Date(++time).toISOString();
+    }
+    const saved =
+      savedAt === pack.saved_at ? pack : { ...pack, saved_at: savedAt };
+    await tx.store.put(saved);
+    await tx.done;
+    return saved;
+  } finally {
+    d.close();
+  }
 }
 export async function listLocal(): Promise<Pack[]> {
   const d = await db();
-  return (await d.getAll("packs"))
-    .map(validatePack)
-    .sort((a, b) => b.saved_at.localeCompare(a.saved_at));
+  try {
+    return (await d.getAll("packs"))
+      .map(validatePack)
+      .sort((a, b) => b.saved_at.localeCompare(a.saved_at));
+  } finally {
+    d.close();
+  }
 }
 export async function deleteLocal(id: string) {
   const d = await db();

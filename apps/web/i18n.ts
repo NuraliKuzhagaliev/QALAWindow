@@ -142,6 +142,9 @@ export const copy = {
     apiFallback:
       "The planning service is unavailable. This walk uses the local OpenStreetMap snapshot.",
     noSaved: "Your saved walks will appear here.",
+    packTooLarge: "Choose a route file of 5 MB or less.",
+    packInvalid: "Choose a valid QALA route pack (.qala.json).",
+    packReadFailed: "Could not open the selected route file.",
     timeFit: "Your time, accounted for",
     constraints: "Inputs used",
     newPlan: "Start a new window",
@@ -298,6 +301,9 @@ export const copy = {
     apiFallback:
       "Сервис планирования недоступен. Маршрут рассчитан по сохранённым данным OpenStreetMap.",
     noSaved: "Здесь появятся сохранённые маршруты.",
+    packTooLarge: "Выберите файл маршрута размером не более 5 МБ.",
+    packInvalid: "Выберите корректный файл маршрута QALA (.qala.json).",
+    packReadFailed: "Не удалось открыть выбранный файл маршрута.",
     timeFit: "Каждая минута учтена",
     constraints: "Использованные условия",
     newPlan: "Новый маршрут",
@@ -455,6 +461,9 @@ export const copy = {
     apiFallback:
       "Жоспарлау қызметі қолжетімсіз. Бағыт сақталған OpenStreetMap деректерімен есептелді.",
     noSaved: "Сақталған бағыттар осында көрсетіледі.",
+    packTooLarge: "Көлемі 5 МБ-тан аспайтын бағыт файлын таңдаңыз.",
+    packInvalid: "Жарамды QALA бағыт файлын (.qala.json) таңдаңыз.",
+    packReadFailed: "Таңдалған бағыт файлын ашу мүмкін болмады.",
     timeFit: "Әр минут есепте",
     constraints: "Қолданылған талаптар",
     newPlan: "Жаңа бағыт",

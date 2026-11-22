@@ -18,6 +18,8 @@ const managed = resolve(dir, "profile/packs");
 const managedPack = resolve(managed, "built-in.qala.json");
 const exportedPack = resolve(dir, "exported.qala.json");
 const newlyExportedPack = resolve(dir, "newly-exported.qala.json");
+const invalidPack = resolve(dir, "invalid.qala.json");
+const privatePack = resolve(dir, "private.qala.json");
 const otherFile = resolve(managed, "keep.txt");
 const executable = resolve("release/windows/win-unpacked/QALA Window.exe");
 await mkdir(managed, { recursive: true });
@@ -119,6 +121,10 @@ try {
     .waitFor();
   const exportData = JSON.parse(await readFile(newlyExportedPack, "utf8"));
   assert.equal(exportData.format, "qala-route-pack");
+  assert.equal(
+    exportData.saved_at,
+    JSON.parse(await readFile(exportedPack, "utf8")).saved_at,
+  );
   await app.evaluate(({ dialog }, filePath) => {
     dialog.showSaveDialog = async () => ({ canceled: false, filePath });
   }, managed);
@@ -128,6 +134,57 @@ try {
       exact: true,
     })
     .waitFor();
+  const saved = () =>
+    page.getByRole("button", { name: "Saved walks", exact: true });
+  const open = () =>
+    page
+      .getByRole("dialog")
+      .getByRole("button", { name: "Open a pack", exact: true });
+  await saved().click();
+  assert.equal(await page.locator(".saved-pack").count(), 1);
+  await writeFile(invalidPack, "invalid QALA file");
+  await app.evaluate(({ dialog }, file) => {
+    dialog.showOpenDialog = async () => ({
+      canceled: false,
+      filePaths: [file],
+    });
+  }, invalidPack);
+  await open().click();
+  await page
+    .getByRole("dialog")
+    .getByRole("alert")
+    .getByText("Choose a valid QALA route pack (.qala.json).", { exact: true })
+    .waitFor();
+  assert.equal(await page.locator(".saved-pack").count(), 1);
+  await writeFile(
+    privatePack,
+    JSON.stringify({ ...exportData, publicStart: false }),
+  );
+  await app.evaluate(({ dialog }, file) => {
+    dialog.showOpenDialog = async () => ({
+      canceled: false,
+      filePaths: [file],
+    });
+  }, privatePack);
+  await open().click();
+  const consent = page.getByRole("checkbox", {
+    name: "Include my custom position in the saved pack",
+  });
+  await consent.waitFor();
+  assert.equal(await consent.isChecked(), false);
+  await save.click();
+  await page
+    .getByText(
+      "Choose a named public start or explicitly include your custom position before saving.",
+      { exact: true },
+    )
+    .waitFor();
+  await saved().click();
+  assert.equal(await page.locator(".saved-pack").count(), 2);
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: "Close", exact: true })
+    .click();
   await page.getByRole("button", { name: "Privacy", exact: true }).click();
   await page
     .getByRole("button", { name: "Clear saved data", exact: true })
@@ -162,6 +219,9 @@ try {
     nativeExportCancelled: true,
     nativeExportWritten: true,
     nativeExportErrorReported: true,
+    repeatedExportRetainsOneLocalCopy: true,
+    invalidPackErrorVisible: true,
+    importedExactLocationRequiresConsentToExport: true,
     picker: "test double; actual IPC and file IO",
     pageErrors,
   };
